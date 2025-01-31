@@ -1,0 +1,19 @@
+/* Hover effect for navbar links */
+.ul .li[data-v-ebc98991]:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at bottom, #1abcd19a 5%, #0000 60%);
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-out;
+    transform: scale(0);
+    transform-origin: bottom;
+}
+
+.group:hover .li[data-v-ebc98991]:before {
+    transform: scale(1);
+}
