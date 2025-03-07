@@ -1,78 +1,18 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../../Providers/ThemeProvider";
+
 
 const Toggle = () => {
 
-    const [dark, setDark] = useState(false);
-
-    const darkModeHandler = () => {
-        setDark(!dark);
-        document.body.classList.toggle("dark");
-    }
+    const { toggleTheme, darkMode } = useContext(ThemeContext);
+    // useContext(ThemeContext)
 
     return (
         <>
-            {/* <button onClick={darkModeHandler}>
-                {dark ? (
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <circle cx="12" cy="12" r="10" stroke="#000000" strokeWidth="1.5" />
-                        <path
-                            d="M7.63262 3.06689C8.98567 3.35733 9.99999 4.56025 9.99999 6.00007C9.99999 7.65693 8.65685 9.00007 6.99999 9.00007C5.4512 9.00007 4.17653 7.82641 4.01685 6.31997"
-                            stroke="#000000"
-                            strokeWidth="1.5"
-                        />
-                        <path
-                            d="M22 13.0505C21.3647 12.4022 20.4793 12 19.5 12C17.567 12 16 13.567 16 15.5C16 17.2632 17.3039 18.7219 19 18.9646"
-                            stroke="#000000"
-                            strokeWidth="1.5"
-                        />
-                        <path
-                            d="M14.5 8.51L14.51 8.49889"
-                            stroke="#000000"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M10 17C11.1046 17 12 16.1046 12 15C12 13.8954 11.1046 13 10 13C8.89543 13 8 13.8954 8 15C8 16.1046 8.89543 17 10 17Z"
-                            stroke="#000000"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                ) : (
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="#ffff"
-                    >
-                        <path
-                            d="M10 3.75H11.25V8.5C11.25 8.91 11.59 9.25 12 9.25C12.41 9.25 12.75 8.91 12.75 8.5V3.75H14C14.41 3.75 14.75 3.41 14.75 3C14.75 2.59 14.41 2.25 14 2.25H10C9.59 2.25 9.25 2.59 9.25 3C9.25 3.41 9.59 3.75 10 3.75Z"
-                            fill="#292D32"
-                        />
-                        <path
-                            d="M14 20.25H12.75V15.5C12.75 15.09 12.41 14.75 12 14.75C11.59 14.75 11.25 15.09 11.25 15.5V20.25H10C9.59 20.25 9.25 20.59 9.25 21C9.25 21.41 9.59 21.75 10 21.75H14C14.41 21.75 14.75 21.41 14.75 21C14.75 20.59 14.41 20.25 14 20.25Z"
-                            fill="#292D32"
-                        />
-                    </svg>
-                )}
-            </button> */}
-
-            {/*  */}
-
-            {dark ? (
-                // 
+            {darkMode ? (
                 // Moon Icon - Rotate Anti-clockwise
                 <button
-                    onClick={darkModeHandler}
+                    onClick={toggleTheme}
                     className="border rounded-full border-[#33e092] rotate-0 group-hover:rotate-180 duration-300 transition-transform"
                 >
                     <svg
@@ -82,21 +22,15 @@ const Toggle = () => {
                         xmlns="http://www.w3.org/2000/svg"
                     >
                         <circle cx="12" cy="12" r="10" strokeWidth="1.5" />
-                        {/* stroke="#000000" */}
                         <path
                             d="M7.63262 3.06689C8.98567 3.35733 9.99999 4.56025 9.99999 6.00007C9.99999 7.65693 8.65685 9.00007 6.99999 9.00007C5.4512 9.00007 4.17653 7.82641 4.01685 6.31997"
                             stroke="#33e092"
                             strokeWidth="1.5"
-
-                        // className="fill-white"
-                        // className="fill-green-800"
                         />
                         <path
                             d="M22 13.0505C21.3647 12.4022 20.4793 12 19.5 12C17.567 12 16 13.567 16 15.5C16 17.2632 17.3039 18.7219 19 18.9646"
                             stroke="#33e092"
                             strokeWidth="1.5"
-                        // className="fill-white"                      
-                        // className="fill-green-800"
                         />
                         <path
                             d="M14.5 8.51L14.51 8.49889"
@@ -104,8 +38,6 @@ const Toggle = () => {
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                        // className="fill-white"
-                        // className="fill-green-800"
                         />
                         <path
                             d="M10 17C11.1046 17 12 16.1046 12 15C12 13.8954 11.1046 13 10 13C8.89543 13 8 13.8954 8 15C8 16.1046 8.89543 17 10 17Z"
@@ -113,14 +45,12 @@ const Toggle = () => {
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                        // className="fill-white"                          
-                        // className="fill-green-800"
                         />
                     </svg>
                 </button>
             ) : (
                 // Sun Icon - Rotate Clockwise
-                <button onClick={darkModeHandler}>
+                <button onClick={toggleTheme}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="22"

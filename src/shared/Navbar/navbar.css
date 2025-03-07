@@ -1,5 +1,5 @@
 /* Hover effect for navbar links */
-.ul .li[data-v-ebc98991]:before {
+/* .ul .li[data-v-ebc98991]:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -16,4 +16,8 @@
 
 .group:hover .li[data-v-ebc98991]:before {
     transform: scale(1);
-}
+} */
+.no-dark-mode {
+    filter: none !important;
+    mix-blend-mode: normal;
+  }

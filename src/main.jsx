@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './Routes/Routes'
+import ThemeProvider from './Providers/ThemeProvider'
 // if tanstack query needed:
 // import {
 //   QueryClient,
@@ -12,8 +13,10 @@ import { router } from './Routes/Routes'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <QueryClientProvider client={queryClient}> */}
-    <RouterProvider router={router} />
-    {/* </QueryClientProvider> */}
+    <ThemeProvider>
+      {/* <QueryClientProvider client={queryClient}> */}
+      <RouterProvider router={router} />
+      {/* </QueryClientProvider> */}
+    </ThemeProvider>
   </React.StrictMode>,
 )
