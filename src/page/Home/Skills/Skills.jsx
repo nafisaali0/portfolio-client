@@ -7,7 +7,8 @@ import express from "../../../../public/techIcon/express-new.svg"
 import mongoDB from "../../../../public/techIcon/mongodb.svg"
 import figma from "../../../../public/tools/figma.svg"
 import vscode from "../../../../public/tools/vs-code.svg"
-import vercel from "../../../../public/tools/vercel.svg"
+// import vercel from "../../../../public/tools/vercel.svg"
+import { TbBrandVercelFilled } from "react-icons/tb";
 import netlify from "../../../../public/tools/netlify.svg"
 import github from "../../../../public/tools/github.svg"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -30,7 +31,7 @@ const Skills = () => {
     const tools = [
         { name: "Figma", image: figma },
         { name: "VS Code", image: vscode },
-        { name: "Vercel", image: vercel },
+        { name: "Vercel", icon: <TbBrandVercelFilled className="w-8 h-8" /> },
         { name: "Netlify", image: netlify },
         { name: "Github", image: github },
     ];
@@ -85,13 +86,17 @@ const Skills = () => {
                         <TabPanel>
                             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                                 <>
-                                    {tools.map((skills, index) => (
+                                    {tools.map((tool, index) => (
                                         <div
                                             key={index}
                                             className="flex flex-col items-center justify-center px-4 py-6 border border-gray-100 rounded-xl"
                                         >
-                                            <img src={skills.image} className="w-8 h-8 text-white" />
-                                            <span className="mt-2 text-sm font-medium">{skills.name}</span>
+                                            {tool.image ? (
+                                                <img src={tool.image} alt={tool.name} className="w-8 h-8" />
+                                            ) : (
+                                                tool.icon
+                                            )}
+                                            <span className="mt-2 text-sm font-medium">{tool.name}</span>
                                         </div>
                                     ))}
                                 </>

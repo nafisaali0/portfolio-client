@@ -1,11 +1,12 @@
+import { useContext } from "react";
 import logo_light from "../../../public/logo/logo_4-removeb.png"
-// import logo_dark from "../../../public/logo/logo_2-removebg.png"
-// import { Link } from "react-router-dom";
+import logo_dark from "../../../public/logo/logo_white-removebg.png"
 import Toggle from "../../components/Toggle/Toggle";
 import './navbar.css'
-// import { useEffect, useState } from "react";
+import { ThemeContext } from "../../Providers/ThemeProvider";
 const Navbar = () => {
 
+    const { darkMode } = useContext(ThemeContext)
 
     return (
         <>
@@ -13,26 +14,27 @@ const Navbar = () => {
                 <div className="container mx-auto dark:text-white">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                         <div className="flex items-center lg:hidden">
-                            <figure>
-                                <img
-                                    src={logo_light}
-                                    alt="Logo"
-                                    className="w-12 h-12 mx-auto"
-                                />
-                            </figure>
+                            <>
+                                {
+                                    darkMode ?
+                                        <figure>
+                                            <img
+                                                src={logo_light}
+                                                alt="Logo"
+                                                className="w-12 h-12 mx-auto"
+                                            />
+                                        </figure>
+                                        :
+                                        <figure>
+                                            <img
+                                                src={logo_dark}
+                                                alt="Logo"
+                                                className="w-12 h-12 mx-auto"
+                                            />
+                                        </figure>
+                                }
+                            </>
                         </div>
-                        {/* <Link
-                            href="/"
-                            className="flex items-center lg:hidden"
-                        >
-                            <figure>/
-                                <img
-                                    src={logo_light}
-                                    alt="Logo"
-                                    className="w-12 h-12 mx-auto"
-                                />
-                            </figure>
-                        </Link> */}
                         <div className="hidden md:flex flex-1 justify-center items-center">
                             <ul className="flex items-center justify-center space-x-16 group">
                                 <li>
@@ -52,18 +54,37 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        href="/"
-                                        data-v-ebc98991
-                                    >
-                                        <figure>
-                                            <img
-                                                src={logo_light}
-                                                alt="Logo"
-                                                className="w-12 h-12 mx-auto"
-                                            />
-                                        </figure>
-                                    </a>
+                                    <>
+                                        {
+                                            darkMode ?
+                                                <a
+                                                    href="/"
+                                                    data-v-ebc98991
+                                                >
+                                                    <figure>
+                                                        <img
+                                                            src={logo_dark}
+                                                            alt="Logo"
+                                                            className="w-12 h-12 mx-auto"
+                                                        />
+                                                    </figure>
+                                                </a>
+                                                :
+                                                <a
+                                                    href="/"
+                                                    data-v-ebc98991
+                                                >
+                                                    <figure>
+                                                        <img
+                                                            src={logo_light}
+                                                            alt="Logo"
+                                                            className="w-12 h-12 mx-auto"
+                                                        />
+                                                    </figure>
+                                                </a>
+                                        }
+                                    </>
+
                                 </li>
                                 <li>
                                     <a
