@@ -1,6 +1,6 @@
 import logo_light from "../../../public/logo/logo_4-removeb.png"
 // import logo_dark from "../../../public/logo/logo_2-removebg.png"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Toggle from "../../components/Toggle/Toggle";
 import './navbar.css'
 // import { useEffect, useState } from "react";
@@ -34,13 +34,13 @@ const Navbar = () => {
                             </figure>
                         </Link> */}
                         <div className="hidden md:flex flex-1 justify-center items-center">
-                            <ul className="flex items-center justify-center space-x-8 group">
+                            <ul className="flex items-center justify-center space-x-16 group">
                                 <li>
                                     <a
                                         href="#articles"
                                         data-v-ebc98991
                                     >
-                                        Articles
+                                        Education
                                     </a>
                                 </li>
                                 <li>
@@ -48,12 +48,12 @@ const Navbar = () => {
                                         href="#about"
                                         data-v-ebc98991
                                     >
-                                        About
+                                        Projects
                                     </a>
                                 </li>
                                 <li>
                                     <a
-                                        href="#about"
+                                        href="/"
                                         data-v-ebc98991
                                     >
                                         <figure>
@@ -70,7 +70,7 @@ const Navbar = () => {
                                         href="#portfolio"
                                         data-v-ebc98991
                                     >
-                                        Portfolio
+                                        About
                                     </a>
                                 </li>
                                 <li>
@@ -78,7 +78,7 @@ const Navbar = () => {
                                         href="#blog"
                                         data-v-ebc98991
                                     >
-                                        Blog
+                                        Contact
                                     </a>
                                 </li>
                                 <li className="">
@@ -87,43 +87,46 @@ const Navbar = () => {
                             </ul>
                         </div>
 
-                        <div className="dropdown dropdown-end md:hidden">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                        <div className="navbar-end md:hidden">
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16m-7 6h7"
+                                        />
+                                    </svg>
+                                </label>
+                                <ul
+                                    tabIndex={0}
+                                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                                 >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16m-7 6h7"
-                                    />
-                                </svg>
-                            </label>
-                            <ul
-                                tabIndex={0}
-                                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-                            >
-                                <li>
-                                    <a href="#about">About</a>
-                                </li>
-                                <li>
-                                    <a href="#portfolio">Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="#education">Education</a>
-                                </li>
-                                <li>
-                                    <a href="#skill">Skill</a>
-                                </li>
-                                <li>
-                                    <a href="#blog">Blog</a>
-                                </li>
-                            </ul>
+                                    <li>
+                                        <a href="#about">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#portfolio">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#education">Education</a>
+                                    </li>
+                                    <li>
+                                        <a href="#skill">Skill</a>
+                                    </li>
+                                    <li>
+                                        <a href="#blog">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <Toggle></Toggle>
                         </div>
                     </nav>
                 </div>

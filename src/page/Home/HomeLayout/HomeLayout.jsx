@@ -1,9 +1,14 @@
+import Profile from "../Profile/Profile"
+import Skills from "../Skills/Skills"
 
 
 const HomeLayout = () => {
     return (
         <>
-            <h1 className="text-3xl text-black">home</h1>
+            <div className="max-w-3xl p-2 mx-auto mt-44 overflow-hidden">
+                <Profile></Profile>
+                <Skills></Skills>
+            </div>
         </>
     )
 }
