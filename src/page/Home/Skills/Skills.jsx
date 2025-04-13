@@ -60,7 +60,7 @@ const Skills = () => {
                                             className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
                                         >
                                             <img src={skills.image} className="w-8 h-8" />
-                                            <span className="mt-2 text-center">{skills.name}</span>
+                                            <span className="mt-2 text-center dark:hover:text-white">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -75,7 +75,7 @@ const Skills = () => {
                                             className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
                                         >
                                             <img src={skills.image} className="w-8 h-8" />
-                                            <span className="mt-2 text-center">{skills.name}</span>
+                                            <span className="mt-2 text-center dark:hover:text-white">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -94,7 +94,7 @@ const Skills = () => {
                                             ) : (
                                                 <span className="text-white">{tool.icon}</span>
                                             )}
-                                            <span className="mt-2">{tool.name}</span>
+                                            <span className="mt-2 dark:hover:text-white">{tool.name}</span>
                                         </div>
                                     ))}
                                 </>

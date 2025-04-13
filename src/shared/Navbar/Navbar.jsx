@@ -5,20 +5,20 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="fixed top-0 w-full z-50">
-                <div className="max-w-3xl mx-auto dark:text-white overflow-hidden">
+            <div className="fixed top-0 w-full z-50 bg-white/30 dark:bg-[#1a1c1f4d] backdrop-blur-xl dark:backdrop-blur-sm">
+                <div className="container mx-auto dark:text-white">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                         <div className="flex items-center md:hidden">
                             <figure>
                                 <img
                                     src={logo}
                                     alt="Logo"
-                                    className="w-12 h-12 mx-auto"
+                                    className="w-9 h-9 mx-auto"
                                 />
                             </figure>
                         </div>
                         <div className="hidden md:flex flex-1 justify-center items-center">
-                            <ul className="flex items-center justify-center space-x-16 group">
+                            <ul className="flex items-center justify-center space-x-16 group font-medium">
                                 <li>
                                     <a
                                         href="#articles"
@@ -115,19 +115,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-
-
-
-// const [isScrolled, setIsScrolled] = useState(false);
-
-// useEffect(() => {
-//     const handleScroll = () => {
-//         setIsScrolled(window.scrollY > 50);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//         window.removeEventListener("scroll", handleScroll);
-//     };
-// }, []);
