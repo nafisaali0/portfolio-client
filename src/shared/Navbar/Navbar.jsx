@@ -1,13 +1,12 @@
 import logo from "../../../public/logo/logo_red_black-removebg.png"
 import Toggle from "../../components/Toggle/Toggle";
-import './navbar.css'
 
 const Navbar = () => {
 
     return (
         <>
             <div className="fixed top-0 w-full z-50">
-                <div className="container mx-auto dark:text-white">
+                <div className="max-w-3xl mx-auto dark:text-white overflow-hidden">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                         <div className="flex items-center md:hidden">
                             <figure>
@@ -87,7 +86,7 @@ const Navbar = () => {
                                 </label>
                                 <ul
                                     tabIndex={0}
-                                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                                    className="dropdown-content mt-3 p-4 text-center space-y-3 font-medium text-[#64748B] dark:text-[#9F9F9F] bg-base-100 dark:bg-black rounded-box w-52 dark:hover:text-white shadow"
                                 >
                                     <li>
                                         <a href="#about">About</a>

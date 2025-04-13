@@ -44,7 +44,7 @@ const Skills = () => {
                 <h2 className="text-2xl font-semibold uppercase mb-6">Tech Arsenal</h2>
                 {/* tab */}
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
-                    <TabList className={"cursor-pointer flex gap-5 items-center text-2xl font-semibold my-5 text-black dark:text-white"}>
+                    <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-white"}>
                         <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Front End</Tab>
                         <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Back End</Tab>
                         <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Tools</Tab>
@@ -57,10 +57,10 @@ const Skills = () => {
                                     {frontendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-4 py-6 rounded-xl border border-[#64748B]"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
                                         >
                                             <img src={skills.image} className="w-8 h-8" />
-                                            <span className="mt-2">{skills.name}</span>
+                                            <span className="mt-2 text-center">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -72,10 +72,10 @@ const Skills = () => {
                                     {backendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-4 py-6 rounded-xl  border border-[#64748B]"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
                                         >
                                             <img src={skills.image} className="w-8 h-8" />
-                                            <span className="mt-2">{skills.name}</span>
+                                            <span className="mt-2 text-center">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -87,12 +87,12 @@ const Skills = () => {
                                     {tools.map((tool, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-4 py-6 rounded-xl border border-[#64748B]"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
                                         >
                                             {tool.image ? (
                                                 <img src={tool.image} alt={tool.name} className="w-8 h-8" />
                                             ) : (
-                                                tool.icon
+                                                <span className="text-white">{tool.icon}</span>
                                             )}
                                             <span className="mt-2">{tool.name}</span>
                                         </div>
