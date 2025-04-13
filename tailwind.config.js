@@ -13,8 +13,7 @@ export default {
         dark: "#0c0f11", // Custom dark mode background color
       },
       fontFamily: {
-        sans: ["Noto Color Emoji", "serif"], // Default
-        heading: ["Lobster", "cursive"], // Use Roboto Mono for sans
+        rubik: ['Rubik', 'sans-serif'],
       },
     },
   },

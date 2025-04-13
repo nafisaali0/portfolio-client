@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  font-family: "Roboto Mono", serif;
+  font-family: 'Rubik', "sans-serif";
 }
 
 .dark {

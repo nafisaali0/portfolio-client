@@ -1,39 +1,22 @@
-import { useContext } from "react";
-import logo_light from "../../../public/logo/logo_4-removeb.png"
-import logo_dark from "../../../public/logo/logo_white-removebg.png"
+import logo from "../../../public/logo/logo_red_black-removebg.png"
 import Toggle from "../../components/Toggle/Toggle";
 import './navbar.css'
-import { ThemeContext } from "../../Providers/ThemeProvider";
-const Navbar = () => {
 
-    const { darkMode } = useContext(ThemeContext)
+const Navbar = () => {
 
     return (
         <>
             <div className="fixed top-0 w-full z-50">
                 <div className="container mx-auto dark:text-white">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
-                        <div className="flex items-center lg:hidden">
-                            <>
-                                {
-                                    darkMode ?
-                                        <figure>
-                                            <img
-                                                src={logo_light}
-                                                alt="Logo"
-                                                className="w-12 h-12 mx-auto"
-                                            />
-                                        </figure>
-                                        :
-                                        <figure>
-                                            <img
-                                                src={logo_dark}
-                                                alt="Logo"
-                                                className="w-12 h-12 mx-auto"
-                                            />
-                                        </figure>
-                                }
-                            </>
+                        <div className="flex items-center md:hidden">
+                            <figure>
+                                <img
+                                    src={logo}
+                                    alt="Logo"
+                                    className="w-12 h-12 mx-auto"
+                                />
+                            </figure>
                         </div>
                         <div className="hidden md:flex flex-1 justify-center items-center">
                             <ul className="flex items-center justify-center space-x-16 group">
@@ -54,37 +37,13 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <>
-                                        {
-                                            darkMode ?
-                                                <a
-                                                    href="/"
-                                                    data-v-ebc98991
-                                                >
-                                                    <figure>
-                                                        <img
-                                                            src={logo_dark}
-                                                            alt="Logo"
-                                                            className="w-12 h-12 mx-auto"
-                                                        />
-                                                    </figure>
-                                                </a>
-                                                :
-                                                <a
-                                                    href="/"
-                                                    data-v-ebc98991
-                                                >
-                                                    <figure>
-                                                        <img
-                                                            src={logo_light}
-                                                            alt="Logo"
-                                                            className="w-12 h-12 mx-auto"
-                                                        />
-                                                    </figure>
-                                                </a>
-                                        }
-                                    </>
-
+                                    <figure>
+                                        <img
+                                            src={logo}
+                                            alt="Logo"
+                                            className="w-12 h-12 mx-auto"
+                                        />
+                                    </figure>
                                 </li>
                                 <li>
                                     <a

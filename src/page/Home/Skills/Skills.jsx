@@ -42,27 +42,26 @@ const Skills = () => {
     return (
         <>
             <div className="py-20 px-10">
-                <h2 className="text-2xl font-bold uppercase mb-6">Tech Stack</h2>
-
+                <h2 className="text-2xl font-bold uppercase mb-6">Tech   Arsenal</h2>
                 {/* tab */}
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={"cursor-pointer flex gap-5 items-center text-2xl font-semibold my-5 text-black dark:text-white"}>
-                        <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none dark:bg-transparent bg-white dark:text-white' : ''}`}>FrontEnd</Tab>
-                        <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none dark:bg-transparent bg-white dark:text-white' : ''}`}>Backend</Tab>
-                        <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none dark:bg-transparent bg-white dark:text-white' : ''}`}>Tools</Tab>
+                        <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>FrontEnd</Tab>
+                        <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Backend</Tab>
+                        <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Tools</Tab>
                     </TabList>
 
-                    <div className="my-5">
+                    <div className="my-5 font-medium">
                         <TabPanel>
                             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                                 <>
                                     {frontendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-4 py-6 border border-gray-100 rounded-xl"
+                                            className="flex flex-col items-center justify-center px-4 py-6 border border-[#64748B] rounded-xl"
                                         >
-                                            <img src={skills.image} className="w-8 h-8 text-white" />
-                                            <span className="mt-2 text-sm font-medium">{skills.name}</span>
+                                            <img src={skills.image} className="w-8 h-8" />
+                                            <span className="mt-2 text-sm dark:text-[#9F9F9F]">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -76,8 +75,8 @@ const Skills = () => {
                                             key={index}
                                             className="flex flex-col items-center justify-center px-4 py-6 border border-gray-100 rounded-xl"
                                         >
-                                            <img src={skills.image} className="w-8 h-8 text-white" />
-                                            <span className="mt-2 text-sm font-medium">{skills.name}</span>
+                                            <img src={skills.image} className="w-8 h-8" />
+                                            <span className="mt-2 text-sm dark:text-[#9F9F9F]">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -96,7 +95,7 @@ const Skills = () => {
                                             ) : (
                                                 tool.icon
                                             )}
-                                            <span className="mt-2 text-sm font-medium">{tool.name}</span>
+                                            <span className="mt-2 text-sm dark:text-[#9F9F9F]">{tool.name}</span>
                                         </div>
                                     ))}
                                 </>
