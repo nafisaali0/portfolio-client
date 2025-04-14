@@ -32,24 +32,24 @@ const Profile = () => {
                             <span>
                                 <MdLocationCity className="w-5 h-5 dark:text-white" />
                             </span>
-                            <span className="dark:hover:text-white">Dhaka Bangladesh</span>
+                            <span className="hover:bg-gradient-to-r hover:from-[#f43f5e] hover:via-[#64748B] hover:to-[#FB923C] hover:text-transparent hover:bg-clip-text">Dhaka Bangladesh</span>
                         </div>
                         {/* Social Links */}
                         <div className="flex justify-start items-center gap-3 cursor-pointer">
                             {/* LinkedIn */}
                             <div className="flex items-center gap-1">
                                 <TbBrandLinkedinFilled className="w-5 h-5 text-[#0077B5] border-[#0077B5]" />
-                                <span className="dark:hover:text-white">LinkedIn</span>
+                                <span className="hover:bg-gradient-to-r hover:from-[#f43f5e] hover:via-[#64748B] hover:to-[#FB923C] hover:text-transparent hover:bg-clip-text">LinkedIn</span>
                             </div>
                             {/* Github */}
                             <div className="flex items-center gap-1">
                                 <VscGithubInverted className="w-5 h-5 dark:text-white" />
-                                <span className="dark:hover:text-white">Github</span>
+                                <span className="hover:bg-gradient-to-r hover:from-[#f43f5e] hover:via-[#64748B] hover:to-[#FB923C] hover:text-transparent hover:bg-clip-text">Github</span>
                             </div>
                             {/* Resume */}
                             <div className="flex items-center gap-1">
                                 <PiFileArrowDownFill className="w-5 h-5 dark:text-white" />
-                                <span className="dark:hover:text-white">Resume</span>
+                                <span className="hover:bg-gradient-to-r hover:from-[#f43f5e] hover:via-[#64748B] hover:to-[#FB923C] hover:text-transparent hover:bg-clip-text">Resume</span>
                             </div>
                         </div>
                     </div>
