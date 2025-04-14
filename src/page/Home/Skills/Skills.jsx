@@ -49,7 +49,6 @@ const Skills = () => {
                         <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Back End</Tab>
                         <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Tools</Tab>
                     </TabList>
-
                     <div className="my-5 font-medium text-sm text-[#0D1117] dark:text-[#9F9F9F]">
                         <TabPanel>
                             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
@@ -57,10 +56,10 @@ const Skills = () => {
                                     {frontendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B] transition-all ease-in-out group"
                                         >
-                                            <img src={skills.image} className="w-8 h-8" />
-                                            <span className="mt-2 text-center dark:hover:text-white">{skills.name}</span>
+                                            <img src={skills.image} className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1" />
+                                            <span className="mt-2 text-center group-hover:bg-gradient-to-r group-hover:from-[#f43f5e] group-hover:via-[#64748B] group-hover:to-[#FB923C] group-hover:text-transparent group-hover:bg-clip-text">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -72,10 +71,10 @@ const Skills = () => {
                                     {backendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B] transition-all ease-in-out group"
                                         >
-                                            <img src={skills.image} className="w-8 h-8" />
-                                            <span className="mt-2 text-center dark:hover:text-white">{skills.name}</span>
+                                            <img src={skills.image} className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1" />
+                                            <span className="mt-2 text-center group-hover:bg-gradient-to-r group-hover:from-[#f43f5e] group-hover:via-[#64748B] group-hover:to-[#FB923C] group-hover:text-transparent group-hover:bg-clip-text">{skills.name}</span>
                                         </div>
                                     ))}
                                 </>
@@ -87,14 +86,14 @@ const Skills = () => {
                                     {tools.map((tool, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B]"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B] transition-all ease-in-out group"
                                         >
                                             {tool.image ? (
-                                                <img src={tool.image} alt={tool.name} className="w-8 h-8" />
+                                                <img src={tool.image} alt={tool.name} className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1" />
                                             ) : (
-                                                <span className="text-white">{tool.icon}</span>
+                                                <span className="dark:text-white transition-transform duration-300 group-hover:-translate-y-1">{tool.icon}</span>
                                             )}
-                                            <span className="mt-2 dark:hover:text-white">{tool.name}</span>
+                                            <span className="mt-2 group-hover:bg-gradient-to-r group-hover:from-[#f43f5e] group-hover:via-[#64748B] group-hover:to-[#FB923C] group-hover:text-transparent group-hover:bg-clip-text">{tool.name}</span>
                                         </div>
                                     ))}
                                 </>
