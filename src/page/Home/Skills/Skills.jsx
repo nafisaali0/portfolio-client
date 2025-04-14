@@ -41,7 +41,7 @@ const Skills = () => {
     return (
         <>
             <div className="py-20 px-10">
-                <h2 className="text-2xl font-semibold uppercase mb-6">Tech Arsenal</h2>
+                <h2 className="text-2xl font-semibold uppercase mb-6">Tech Toolbox</h2>
                 {/* tab */}
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-white"}>
