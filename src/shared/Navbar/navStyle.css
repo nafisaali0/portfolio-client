@@ -1,0 +1,37 @@
+/* NavHover.css */
+.nav-hover {
+  position: relative;
+  z-index: 0;
+}
+
+.nav-hover::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 15px;
+  bottom: 0;
+  left: 0;
+  /* background: radial-gradient(
+    circle at bottom,
+    rgba(244, 63, 94, 0.45) 30%,    
+    rgba(251, 146, 60, 0.4) 50%,   
+    transparent 60%
+  ); */
+  background: radial-gradient(
+  circle at bottom,
+  rgba(244, 63, 94, 0.45) 30%,   /* Rose shade with 45% opacity */
+  rgba(251, 146, 60, 0.4) 50%,   /* Orange shade with 40% opacity */
+  transparent 60%
+);
+
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transform-origin: bottom;
+  transition: transform 0.2s ease-out;
+  border-radius: 0.5rem; /* optional for smoother edges */
+}
+
+.nav-hover:hover::before {
+  transform: scale(1);
+}

@@ -1,6 +1,7 @@
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo/logo_red_black-removebg.png"
 import Toggle from "../../components/Toggle/Toggle";
-
+import './navStyle.css'
 const Navbar = () => {
 
     return (
@@ -8,64 +9,97 @@ const Navbar = () => {
             <div className="fixed top-0 w-full z-50 bg-white/30 dark:bg-[#1a1c1f4d] backdrop-blur-xl dark:backdrop-blur-sm">
                 <div className="container mx-auto dark:text-white">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
+                        {/* small screen logo */}
                         <div className="flex items-center md:hidden">
-                            <figure>
-                                <img
-                                    src={logo}
-                                    alt="Logo"
-                                    className="w-9 h-9 mx-auto"
-                                />
-                            </figure>
+                            <Link to="/">
+                                <figure>
+                                    <img
+                                        src={logo}
+                                        alt="Logo"
+                                        className="w-9 h-9 mx-auto"
+                                    />
+                                </figure>
+                            </Link>
                         </div>
+                        {/* large screen */}
                         <div className="hidden md:flex flex-1 justify-center items-center">
-                            <ul className="flex items-center justify-center space-x-16 group font-medium">
+                            <ul className="flex items-center justify-center space-x-16 group font-medium text-black dark:text-white">
                                 <li>
-                                    <a
-                                        href="#articles"
-                                        data-v-ebc98991
+                                    <NavLink
+                                        to="/education"
+                                        className={({ isActive }) =>
+                                            `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
+                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                : ""
+                                            }`
+                                        }
                                     >
                                         Education
-                                    </a>
+                                    </NavLink>
                                 </li>
+
                                 <li>
-                                    <a
-                                        href="#about"
-                                        data-v-ebc98991
+                                    <NavLink
+                                        to="/projects"
+                                        className={({ isActive }) =>
+                                            `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
+                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                : ""
+                                            }`
+                                        }
                                     >
                                         Projects
-                                    </a>
+                                    </NavLink>
                                 </li>
+
+                                {/* Logo link – no hover or active styling */}
                                 <li>
-                                    <figure>
-                                        <img
-                                            src={logo}
-                                            alt="Logo"
-                                            className="w-12 h-12 mx-auto"
-                                        />
-                                    </figure>
+                                    <Link to="/">
+                                        <figure>
+                                            <img
+                                                src={logo}
+                                                alt="Logo"
+                                                className="w-12 h-12 mx-auto cursor-pointer"
+                                            />
+                                        </figure>
+                                    </Link>
                                 </li>
+
                                 <li>
-                                    <a
-                                        href="#portfolio"
-                                        data-v-ebc98991
+                                    <NavLink
+                                        to="/about"
+                                        className={({ isActive }) =>
+                                            `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
+                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                : ""
+                                            }`
+                                        }
                                     >
                                         About
-                                    </a>
+                                    </NavLink>
                                 </li>
+
                                 <li>
-                                    <a
-                                        href="#blog"
-                                        data-v-ebc98991
+                                    <NavLink
+                                        to="/contact"
+                                        className={({ isActive }) =>
+                                            `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
+                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                : ""
+                                            }`
+                                        }
                                     >
                                         Contact
-                                    </a>
+                                    </NavLink>
                                 </li>
-                                <li className="">
-                                    <Toggle></Toggle>
+
+                                <li>
+                                    <Toggle />
                                 </li>
                             </ul>
                         </div>
 
+                        {/* small screen */}
                         <div className="navbar-end md:hidden">
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -86,22 +120,27 @@ const Navbar = () => {
                                 </label>
                                 <ul
                                     tabIndex={0}
-                                    className="dropdown-content mt-3 p-4 text-center space-y-3 font-medium text-[#64748B] dark:text-[#9F9F9F] bg-base-100 dark:bg-black rounded-box w-52 dark:hover:text-white shadow"
+                                    className="dropdown-content mt-3 p-4 text-center space-y-3 font-medium text-[#64748B] dark:text-[#9F9F9F] bg-base-100 dark:bg-black rounded-box w-52 shadow"
                                 >
                                     <li>
-                                        <a href="#about">About</a>
+                                        <Link to="/education">
+                                            Education
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="#portfolio">Portfolio</a>
+                                        <Link to="/projects">
+                                            Projects
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="#education">Education</a>
+                                        <Link to="/about">
+                                            About
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="#skill">Skill</a>
-                                    </li>
-                                    <li>
-                                        <a href="#blog">Blog</a>
+                                        <Link to="/contact">
+                                            Contact
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
