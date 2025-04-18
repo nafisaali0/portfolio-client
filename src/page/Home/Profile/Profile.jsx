@@ -19,14 +19,14 @@ const Profile = () => {
                 </div>
                 <div>
                     <div className="text-4xl md:text-left text-center font-semibold">
-                        It's <span className="text-black dark:text-white">Nafisa</span>.
+                        It's <span className="dark:text-white">Nafisa</span>.
                         I am a <span className="text-[#64748B] dark:text-[#9F9F9F]">Frontend</span>
                     </div>
                     <div className="flex justify-start items-center flex-col md:flex-row gap-5 md:my-2">
                         <span className=" text-4xl font-semibold text-[#64748B] dark:text-[#9F9F9F]">Web Developer.</span>
                         <div className="inline-block px-5 py-1 text-lg rounded-full my-2 md:my-0 bg-green-900 text-green-300 hover:text-green-100 dark:bg-green-600/20 dark:text-green-600 dark:hover:bg-green-500/20 dark:hover:text-green-500">● Open to work</div>
                     </div>
-                    <div className="flex justify-between items-center gap-3 md:gap-6 flex-col md:flex-row mt-5 md:mt-7 text-xm font-medium text-[#0D1117] dark:text-[#9F9F9F]">
+                    <div className="flex justify-between items-center gap-3 md:gap-6 flex-col md:flex-row mt-5 md:mt-7 text-xm font-medium text-[#0D1117] dark:text-[#D9D9D9]">
                         {/* Location */}
                         <div className="flex justify-start items-center gap-1">
                             <span>

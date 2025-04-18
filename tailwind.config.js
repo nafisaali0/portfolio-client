@@ -10,10 +10,22 @@ export default {
     // },
     extend: {
       colors: {
-        dark: "#0c0f11", // Custom dark mode background color
+        // dark: "#0c0f11",
+        bodyBG: "#18181B",
+        navBG: "#1a1c1f4d",
+        grayLightProfileText: "#64748B",
+        grayDarkProfileText: "#9F9F9F",
+        textSmalllight: "#0D1117",
+        orangeDeep: "#f43f5e",
+        orangeSoft: "#FB923C",
+        grayDarkAlltext: "#D9D9D9",
+        gradienthover:
+          "hover:bg-gradient-to-r hover:from-orangeDeep hover:via-grayLightProfileText hover:to-orangeSoft hover:text-transparent hover:bg-clip-text",
+        gradientBG:
+          "bg-gradient-to-r from-orangeDeep via-grayLightProfileText to-orangeSoft text-transparent bg-clip-text",
       },
       fontFamily: {
-        rubik: ['Rubik', 'sans-serif'],
+        rubik: ["Rubik", "sans-serif"],
       },
     },
   },

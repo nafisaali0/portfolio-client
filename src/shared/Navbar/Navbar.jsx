@@ -2,12 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo/logo_red_black-removebg.png"
 import Toggle from "../../components/Toggle/Toggle";
 import './navStyle.css'
+
+
 const Navbar = () => {
 
     return (
         <>
-            <div className="fixed top-0 w-full z-50 bg-white/30 dark:bg-[#1a1c1f4d] backdrop-blur-xl dark:backdrop-blur-sm">
-                <div className="container mx-auto dark:text-white">
+            <div className="fixed top-0 w-full z-50 dark:bg-navBG backdrop-blur-xl dark:backdrop-blur-sm">
+                <div className="container mx-auto">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                         {/* small screen logo */}
                         <div className="flex items-center md:hidden">
@@ -23,13 +25,13 @@ const Navbar = () => {
                         </div>
                         {/* large screen */}
                         <div className="hidden md:flex flex-1 justify-center items-center">
-                            <ul className="flex items-center justify-center space-x-16 group font-medium text-black dark:text-white">
+                            <ul className="flex items-center justify-center space-x-16 group font-medium text-black dark:text-grayDarkAlltext">
                                 <li>
                                     <NavLink
                                         to="/education"
                                         className={({ isActive }) =>
                                             `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
-                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                ? "gradientBG"
                                                 : ""
                                             }`
                                         }
@@ -43,7 +45,7 @@ const Navbar = () => {
                                         to="/projects"
                                         className={({ isActive }) =>
                                             `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
-                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                ? "gradientBG"
                                                 : ""
                                             }`
                                         }
@@ -52,7 +54,6 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
 
-                                {/* Logo link – no hover or active styling */}
                                 <li>
                                     <Link to="/">
                                         <figure>
@@ -70,7 +71,7 @@ const Navbar = () => {
                                         to="/about"
                                         className={({ isActive }) =>
                                             `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
-                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                ? "gradientBG"
                                                 : ""
                                             }`
                                         }
@@ -84,7 +85,7 @@ const Navbar = () => {
                                         to="/contact"
                                         className={({ isActive }) =>
                                             `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
-                                                ? "bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] text-transparent bg-clip-text"
+                                                ? "gradientBG"
                                                 : ""
                                             }`
                                         }
@@ -120,31 +121,66 @@ const Navbar = () => {
                                 </label>
                                 <ul
                                     tabIndex={0}
-                                    className="dropdown-content mt-3 p-4 text-center space-y-3 font-medium text-[#64748B] dark:text-[#9F9F9F] bg-base-100 dark:bg-black rounded-box w-52 shadow"
+                                    className="dropdown-content mt-3 p-4 py-6 text-center space-y-5 font-medium text-grayLightProfileText dark:text-grayDarkAlltext dark:bg-navBG backdrop-blur-2xl rounded-box w-52 shadow"
                                 >
                                     <li>
-                                        <Link to="/education">
+                                        <NavLink
+                                            to="/education"
+                                            className={({ isActive }) =>
+                                                `gradientHover ${isActive
+                                                    ? "gradientBG"
+                                                    : ""
+                                                }`
+                                            }
+                                        >
                                             Education
-                                        </Link>
+                                        </NavLink>
                                     </li>
+
                                     <li>
-                                        <Link to="/projects">
+                                        <NavLink
+                                            to="/projects"
+                                            className={({ isActive }) =>
+                                                `gradientHover ${isActive
+                                                    ? "gradientBG"
+                                                    : ""
+                                                }`
+                                            }
+                                        >
                                             Projects
-                                        </Link>
+                                        </NavLink>
                                     </li>
+
                                     <li>
-                                        <Link to="/about">
+                                        <NavLink
+                                            to="/about"
+                                            className={({ isActive }) =>
+                                                `gradientHover ${isActive
+                                                    ? "gradientBG"
+                                                    : ""
+                                                }`
+                                            }
+                                        >
                                             About
-                                        </Link>
+                                        </NavLink>
                                     </li>
+
                                     <li>
-                                        <Link to="/contact">
+                                        <NavLink
+                                            to="/contact"
+                                            className={({ isActive }) =>
+                                                `gradientHover ${isActive
+                                                    ? "gradientBG"
+                                                    : ""
+                                                }`
+                                            }
+                                        >
                                             Contact
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>
-                            <Toggle></Toggle>
+                            <Toggle />
                         </div>
                     </nav>
                 </div>

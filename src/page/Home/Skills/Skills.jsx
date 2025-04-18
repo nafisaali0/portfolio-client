@@ -41,7 +41,7 @@ const Skills = () => {
     return (
         <>
             <div className="py-20 px-10">
-                <h2 className="text-2xl font-semibold uppercase mb-6">Tech Toolbox</h2>
+                <h2 className="text-2xl font-semibold uppercase mb-6 dark:text-[#D9D9D9]">Tech Toolbox</h2>
                 {/* tab */}
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-white"}>
@@ -49,7 +49,7 @@ const Skills = () => {
                         <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Back End</Tab>
                         <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Tools</Tab>
                     </TabList>
-                    <div className="my-5 font-medium text-sm text-[#0D1117] dark:text-[#9F9F9F]">
+                    <div className="my-5 font-medium text-sm text-[#0D1117] dark:text-[#D9D9D9]">
                         <TabPanel>
                             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                                 <>
