@@ -40,23 +40,23 @@ const Skills = () => {
     };
     return (
         <>
-            <div className="py-20 px-10">
-                <h2 className="text-2xl font-semibold uppercase mb-6 dark:text-[#D9D9D9]">Tech Toolbox</h2>
+            <div className="my-16 pl-2">
+                <h2 className="text-2xl font-semibold uppercase mb-6 text-black dark:text-grayDarkAlltext">Tech Toolbox</h2>
                 {/* tab */}
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
-                    <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-white"}>
-                        <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Front End</Tab>
-                        <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Back End</Tab>
-                        <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-white' : ''}`}>Tools</Tab>
+                    <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
+                        <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Front End</Tab>
+                        <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Back End</Tab>
+                        <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Tools</Tab>
                     </TabList>
-                    <div className="my-5 font-medium text-sm text-[#0D1117] dark:text-[#D9D9D9]">
+                    <div className="my-5 font-medium text-sm text-black dark:text-grayDarkAlltext">
                         <TabPanel>
                             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                                 <>
                                     {frontendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B] transition-all ease-in-out group"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-grayLightProfileText transition-all ease-in-out group"
                                         >
                                             <img src={skills.image} className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1" />
                                             <span className="mt-2 text-center group-hover:bg-gradient-to-r group-hover:from-[#f43f5e] group-hover:via-[#64748B] group-hover:to-[#FB923C] group-hover:text-transparent group-hover:bg-clip-text">{skills.name}</span>
@@ -71,7 +71,7 @@ const Skills = () => {
                                     {backendSkills.map((skills, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B] transition-all ease-in-out group"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-grayLightProfileText transition-all ease-in-out group"
                                         >
                                             <img src={skills.image} className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1" />
                                             <span className="mt-2 text-center group-hover:bg-gradient-to-r group-hover:from-[#f43f5e] group-hover:via-[#64748B] group-hover:to-[#FB923C] group-hover:text-transparent group-hover:bg-clip-text">{skills.name}</span>
@@ -86,7 +86,7 @@ const Skills = () => {
                                     {tools.map((tool, index) => (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-[#64748B] transition-all ease-in-out group"
+                                            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-6 rounded-xl border border-grayLightProfileText transition-all ease-in-out group"
                                         >
                                             {tool.image ? (
                                                 <img src={tool.image} alt={tool.name} className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1" />

@@ -6,12 +6,13 @@ const ErrorPage = () => {
     const error = useRouteError();
     return (
         <>
-            <div className="container mx-auto flex flex-col justify-center items-center my-10">
+            <div className="container mx-auto flex flex-col justify-center items-center p-5 my-10">
                 <DotLottieReact
                     src="https://lottie.host/5178edf7-a920-4771-a74f-13640e28a2de/fvVc2ly8S4.lottie"
                     background="transparent"
                     speed="1"
-                    style={{ height: '400px', width: '700px' }}
+                    className="w-[400px] h-[400px] md:w-[700px] md:h-[400px]"
+                    // style={{ height: '400px', width: '700px' }}
                     loop
                     autoplay
                 />
