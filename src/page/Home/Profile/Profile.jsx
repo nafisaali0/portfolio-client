@@ -1,4 +1,4 @@
-import profile from "../../../../public/logo/profileImage.png"
+import profile from "../../../../public/logo/myAvater.png"
 import { MdLocationCity } from "react-icons/md";
 // import { HiLocationMarker } from "react-icons/hi";
 // import { ImLocation2 } from "react-icons/im";
