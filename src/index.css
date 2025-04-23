@@ -4,12 +4,15 @@
 
 html {
   font-family: "Rubik", "sans-serif";
+  background-color: white !important;
+  color: black !important;
+}
+/* When dark mode is active (.dark class on <html> or <body>) */
+.dark{
+  background-color: rgba(24, 24, 27, 1) !important; /* or any dark color */
+  color: white !important;
 }
 
-.dark {
-  background-color: rgba(24, 24, 27, 1);
-  color: #ffffff;
-}
 @layer components {
   .gradientBG {
     @apply bg-gradient-to-r from-orangeDeep via-grayLightProfileText to-orangeSoft text-transparent bg-clip-text;

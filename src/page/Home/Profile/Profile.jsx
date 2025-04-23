@@ -18,8 +18,8 @@ const Profile = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="text-4xl md:text-left text-center font-semibold">
-                        It's <span className="dark:text-white">Nafisa</span>.
+                    <div className="text-4xl md:text-left text-center font-semibold dark:text-white">
+                        It's <span>Nafisa</span>.
                         I am a <span className="text-grayLightProfileText dark:text-grayDarkProfileText">Frontend</span>
                     </div>
                     <div className="flex justify-start items-center flex-col md:flex-row gap-5 md:my-2">

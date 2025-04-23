@@ -5,12 +5,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    // daisyui: {
-    //   themes: ["light", "dark", "cupcake"],
-    // },
+    daisyui: {
+      themes: ["light", "dark", "cupcake"],
+    },
     extend: {
       colors: {
-        // dark: "#0c0f11",
         bodyBG: "#18181B",
         navBG: "#1a1c1f4d",
         grayLightProfileText: "#64748B",

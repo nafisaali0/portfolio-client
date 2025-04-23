@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="fixed top-0 w-full z-50 dark:bg-navBG backdrop-blur-xl dark:backdrop-blur-sm">
+            <div className="fixed top-0 w-full z-50 bg-white dark:bg-bodyBG backdrop-blur-xl dark:backdrop-blur-sm">
                 <div className="container mx-auto">
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                         {/* small screen logo */}
