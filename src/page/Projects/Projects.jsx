@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
-import project2 from "../../../public/Projects/blog.png"
+// import project2 from "../../../public/Projects/blog.png"
 import useProjects from "../../hooks/useProjects";
 
 const Projects = () => {
@@ -10,6 +10,7 @@ const Projects = () => {
         setSelectedTab(index);
     };
     const [fetchProjects] = useProjects();
+    console.log(fetchProjects)
     
     return (
 

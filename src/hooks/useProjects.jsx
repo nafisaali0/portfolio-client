@@ -5,7 +5,7 @@ const useProjects = () => {
 
     const axiosPublic = useAxiosPublic();
 
-    const { data: fetchProjects = [], isPending: loading, refetch, error } = useQuery ({
+    const { data: fetchProjects = [], isPending: loading, refetch} = useQuery ({
         queryKey: ['fetchProjects'],
         queryFn: async () => {
             const res = await axiosPublic.get('/projects');
@@ -13,7 +13,7 @@ const useProjects = () => {
         }
     })
 
-    return [fetchProjects, loading , refetch, error]
+    return [fetchProjects, loading , refetch]
 }
 
 export default useProjects

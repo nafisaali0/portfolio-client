@@ -1,7 +1,6 @@
 import moment from "moment";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-import useAdminLocalStorage from "../../hooks/useAdminLocalStorage";
 import { useState } from "react";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -10,9 +9,6 @@ const image_hostion_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const CreateProjects = () => {
 
     const axiosPublic = useAxiosPublic();
-    const isAdmin = useAdminLocalStorage();
-    console.log(isAdmin)
-
 
     //for intent output 
     const [imagePreview, setImagePreview] = useState(null)
