@@ -3,6 +3,7 @@ import MainLayout from './../Layout/MainLayout';
 import HomeLayout from './../page/Home/HomeLayout/HomeLayout';
 import ErrorPage from "../page/ErrorPage/ErrorPage";
 import Projects from "../page/Projects/Projects";
+import CreateProjects from "../page/CreateProjects/CreateProjects";
 
 export const router = createBrowserRouter([
     {
@@ -18,10 +19,10 @@ export const router = createBrowserRouter([
                 path: "/projects",
                 element: <Projects></Projects>
             },
-            // {
-            //     path: "/home",
-            //     element: <HomeLayout></HomeLayout>
-            // },
+            {
+                path: "/create-procjects",
+                element: <CreateProjects></CreateProjects>
+            },
         ],
     },
 ]);
