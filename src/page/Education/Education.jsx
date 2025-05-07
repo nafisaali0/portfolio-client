@@ -4,10 +4,28 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import certificate_one from "../../../public/education/programming_hero_certificate.jpg"
 const Education = () => {
 
-    const uniEdu = [
-        { courseName: "Bachelor of Technology in Computer Science Engineering(CSE)" },
-        { uName: "University of Information Technology and Sciences(UITS)" },
-        { year: "2020 - 2023" },
+    const education = [
+        {
+            "_id": "1",
+            "link": "https://uits.edu.bd/",
+            "instituteName": "University of Information Technology and Sciences(UITS)",
+            "courseName": "Bachelor of Technology in Computer Science Engineering(CSE)",
+            "year": "2020 - 2023",
+        },
+        {
+            "_id": "2",
+            "link": "https://mubc.edu.bd/",
+            "instituteName": "Monipur Uchcha Biddalaya and College",
+            "courseName": "Higher Secondary Certificate(HSC)",
+            // "year": "2020 - 2023",
+        },
+        {
+            "_id": "2",
+            "link": "https://mgili.edu.bd/",
+            "instituteName": "Mirpur Girls Ideal Laboratory Institute",
+            "courseName": "Secondary School Certificate(SSC)",
+            // "year": "2020 - 2023",
+        }
     ];
 
     const [selectedTab, setSelectedTab] = useState(0);//for Tab list
@@ -23,48 +41,37 @@ const Education = () => {
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
                         <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Academic</Tab>
-                        <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Cource's Certificates</Tab>
-                        {/* <Tab className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Tools</Tab> */}
+                        <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Course's Certificates</Tab>
                     </TabList>
                     <div className="my-8 text-black dark:text-grayDarkAlltext">
                         <TabPanel>
-
-                            {uniEdu.map((uniBackground, index) => (
+                            {education.map((eduBackground, index) => (
                                 <>
-                                    <div className="flex" key={index}>
+                                    <div className="flex my-8" key={index}>
                                         <div className="w-1 mr-4 inset-0 bg-gradient-to-b from-[#f43f5e] via-[#64748B] to-[#FB923C] rounded-sm"></div>
                                         <div>
-                                            <h3 className="text-white text-lg font-semibold">
-                                                {uniBackground.courseName}
+                                            <h3 className="dark:text-white text-lg font-semibold">
+                                                {eduBackground.courseName}
                                             </h3>
-                                            <Link to={'https://uits.edu.bd/'} target='_blank'>
-                                                <p className='text-sm hover:text-blue-300 hover:underline'>{uniBackground.uName}</p>
+                                            <Link to={eduBackground.link} target='_blank'>
+                                                <p className='text-sm hover:text-blue-300 hover:underline'>{eduBackground.instituteName}</p>
                                             </Link>
-                                            <p className="text-sm">{uniBackground.year}</p>
+                                            <p className="text-sm">{eduBackground.year}</p>
                                         </div>
                                     </div>
                                 </>
                             ))}
                         </TabPanel>
                         <TabPanel>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {/* <div className="w-full h-auto">
+                            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> */}
+                                <div className="max-w-full mx-auto p-4">
                                     <img
                                         src={certificate_one}
-                                        alt='programming hero'
-                                        className="w-full h-full object-cover rounded-lg shadow-md"
-                                    />
-                                </div> */}
-
-                                <div className="w-full aspect-[4/3]">
-                                    <img
-                                        src={certificate_one}
-                                        alt="certificate"
-                                        className="w-full h-full object-contain rounded-lg shadow-md"
+                                        alt="Descriptive Alt Text"
+                                        className="w-full h-auto block rounded-lg shadow-md object-contain"
                                     />
                                 </div>
-
-                            </div>
+                            {/* </div> */}
                         </TabPanel>
                     </div>
                 </Tabs>
