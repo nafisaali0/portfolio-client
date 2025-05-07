@@ -28,7 +28,7 @@ const Navbar = () => {
                             <ul className="flex items-center justify-center space-x-16 group font-medium text-black dark:text-grayDarkAlltext">
                                 <li>
                                     <NavLink
-                                        to="/education"
+                                        to="/education-background"
                                         className={({ isActive }) =>
                                             `nav-hover px-2 py-1 transition-all duration-200 rounded ${isActive
                                                 ? "gradientBG"
@@ -125,7 +125,7 @@ const Navbar = () => {
                                 >
                                     <li>
                                         <NavLink
-                                            to="/education"
+                                            to="/education-background"
                                             className={({ isActive }) =>
                                                 `gradientHover ${isActive
                                                     ? "gradientBG"
