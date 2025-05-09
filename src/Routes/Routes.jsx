@@ -5,6 +5,7 @@ import ErrorPage from "../page/ErrorPage/ErrorPage";
 import Projects from "../page/Projects/Projects";
 import CreateProjects from "../page/CreateProjects/CreateProjects";
 import Education from "../page/Education/Education";
+import About from "../page/About/About";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "/education-background",
                 element: <Education></Education>
+            },
+            {
+                path: "/about",
+                element: <About></About>
             },
         ],
     },
