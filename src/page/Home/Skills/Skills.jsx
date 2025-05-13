@@ -40,7 +40,7 @@ const Skills = () => {
     };
     return (
         <>
-            <div className="my-16 pl-2">
+            <div className="max-w-4xl p-5 my-16 mx-auto overflow-hidden">
                 <h2 className="text-2xl font-semibold uppercase mb-6 text-black dark:text-grayDarkAlltext">Tech Toolbox</h2>
                 {/* tab */}
                 <Tabs onSelect={(index) => handleTabSelect(index)}>

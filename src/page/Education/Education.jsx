@@ -35,7 +35,7 @@ const Education = () => {
 
     return (
         <>
-            <div className="max-w-3xl p-5 pl-10 mx-auto mt-36 overflow-hidden">
+            <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
                 <h1 className="text-2xl font-bold dark:text-grayDarkAlltext">Education Background</h1>
 
                 <Tabs onSelect={(index) => handleTabSelect(index)}>

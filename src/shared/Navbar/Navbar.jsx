@@ -8,8 +8,8 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="fixed top-0 w-full z-50 bg-white dark:bg-bodyBG backdrop-blur-xl dark:backdrop-blur-sm">
-                <div className="container mx-auto">
+            <div className="fixed top-0 z-50 w-full bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
+                {/* <div className="max-w-6xl mx-auto bg-gray-500 flex justify-center"> */}
                     <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                         {/* small screen logo */}
                         <div className="flex items-center md:hidden">
@@ -25,7 +25,7 @@ const Navbar = () => {
                         </div>
                         {/* large screen */}
                         <div className="hidden md:flex flex-1 justify-center items-center">
-                            <ul className="flex items-center justify-center space-x-16 group font-medium text-black dark:text-grayDarkAlltext">
+                            <ul className="flex items-center justify-center space-x-24 group font-medium text-black dark:text-grayDarkAlltext">
                                 <li>
                                     <NavLink
                                         to="/education-background"
@@ -183,7 +183,7 @@ const Navbar = () => {
                             <Toggle />
                         </div>
                     </nav>
-                </div>
+                {/* </div> */}
             </div>
         </>
     )

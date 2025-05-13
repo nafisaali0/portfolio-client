@@ -6,6 +6,7 @@ html {
   font-family: "Rubik", "sans-serif";
   background-color: white !important;
   color: black !important;
+  box-sizing: border-box;
 }
 /* When dark mode is active (.dark class on <html> or <body>) */
 .dark{
