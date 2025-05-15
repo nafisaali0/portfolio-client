@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 // import project2 from "../../../public/Projects/blog.png"
-import useProjects from "../../hooks/useProjects";
+// import useProjects from "../../hooks/useProjects";
+import useProjectsCategory from "../../hooks/useProjectsCategory";
+import { useState } from "react";
 
 const Projects = () => {
 
@@ -9,23 +10,7 @@ const Projects = () => {
     const handleTabSelect = (index) => {
         setSelectedTab(index);
     };
-    const [category, setCategory] = useState([]);
-    console.log(category)
-    const [fetchProjects] = useProjects();
-    // console.log(fetchProjects)
-
-    useEffect(() => {
-        const findCategory = fetchProjects?.map((values) => values.category)
-        console.log(findCategory)
-
-        const getCategories = findCategory
-            ?.flatMap(item => item?.split(',')?.map(cat => cat?.trim()?.toLowerCase()));
-        console.log(getCategories)
-
-        const uniqueCategory = [...new Set(getCategories)];
-        console.log(uniqueCategory)
-        setCategory(uniqueCategory)
-    }, [fetchProjects]);
+    const category  = useProjectsCategory()
 
     return (
 
@@ -48,15 +33,6 @@ const Projects = () => {
 
                     <div className="font-medium text-sm text-black dark:text-grayDarkAlltext">
                         <TabPanel>
-                            {/* <>
-                                {
-                                    category.map((eachCategory, index) => (
-                                        <div key={index}>
-                                            {eachCategory}
-                                        </div>
-                                    ))
-                                }
-                            </> */}
                         </TabPanel>
                         <TabPanel></TabPanel>
                         <TabPanel></TabPanel>

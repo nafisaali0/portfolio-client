@@ -43,7 +43,7 @@ const CreateProjects = () => {
     };
 
     // create final post to server 
-    const handleCreateBlog = async (e) => {
+    const handleCreateProject = async (e) => {
         e.preventDefault();
 
         const title = e.target.title.value;
@@ -78,7 +78,7 @@ const CreateProjects = () => {
     return (
         <>
             <div className="overflow-hidden my-20 p-5">
-                <form onSubmit={handleCreateBlog}>
+                <form onSubmit={handleCreateProject}>
                     <div className="flex items-start justify-start flex-col-reverse lg:flex-row gap-7">
                         <div className="w-full lg:w-2/4 h-screen">
                             <div className="h-screen overflow-y-scroll border-[.6px] border-b-white p-12 pt-14">
