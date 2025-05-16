@@ -48,14 +48,17 @@ const CreateProjects = () => {
 
         const title = e.target.title.value;
         const description = e.target.description.value;
-        const category = e.target.category.value;
+        const categoryInput = e.target.category.value;
+        const category = categoryInput
+            .split(',')
+            .map(item => item.trim().toLowerCase());
         const language = e.target.language.value;
         const live_link = e.target.live_link.value;
         const github_link = e.target.github_link.value;
         const date = moment().format("MMM Do YY");
         const adminEmail = localStorage.getItem('userEmail');
 
-        const newProject = { title, description, date, category, language, live_link, github_link, details_image: imagePreview,adminEmail }
+        const newProject = { title, description, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
         console.log(newProject)
         fetch('http://localhost:5000/projects', {
             method: 'POST',

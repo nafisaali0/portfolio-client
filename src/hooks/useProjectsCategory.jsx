@@ -2,19 +2,17 @@ import { useMemo } from "react";
 import useProjects from "./useProjects";
 
 const useProjectsCategory = () => {
-    const [fetchProjects] = useProjects()
+    const [fetchProjects] = useProjects();
 
-    const category = useMemo(() => {
+    const uniqueCategory = useMemo(() => {
         if (!fetchProjects) return [];
 
-        const allCategories = fetchProjects
-            .map(project => project.category)
-            .flatMap(item => item.split(',').map(eachCategory => eachCategory.trim().toLowerCase()));
+        const allCategories = fetchProjects.flatMap(project => project.category);
 
         return [...new Set(allCategories)];
     }, [fetchProjects]);
 
-    return category;
+    return uniqueCategory;
 }
 
 export default useProjectsCategory
