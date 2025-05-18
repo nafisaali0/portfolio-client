@@ -1,0 +1,8 @@
+.group-with-var {
+  --ct-h: 16rem;      /* default small-screen height */
+}
+@media (min-width: 768px) {
+  .group-with-var {
+    --ct-h: 20rem;    /* whatever md:h-80 equals (5rem * 16) = 20rem */
+  }
+}
