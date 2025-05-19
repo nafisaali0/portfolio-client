@@ -18,6 +18,7 @@ export default {
         orangeDeep: "#f43f5e",
         orangeSoft: "#FB923C",
         grayDarkAlltext: "#D9D9D9",
+        textSmalllight2: "#E0DFE3",
         gradienthover:
           "hover:bg-gradient-to-r hover:from-orangeDeep hover:via-grayLightProfileText hover:to-orangeSoft hover:text-transparent hover:bg-clip-text",
         gradientBG:

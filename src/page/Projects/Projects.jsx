@@ -9,6 +9,7 @@ import { RxVideo } from "react-icons/rx";
 // import { GrUpdate } from "react-icons/gr";
 // import { TiDelete } from "react-icons/ti";
 
+
 const Projects = () => {
 
     const [selectedTab, setSelectedTab] = useState(0);//for Tab list    
@@ -39,7 +40,7 @@ const Projects = () => {
                         <TabPanel>
                             <div className="grid grid-cols-1 gap-3 overflow-hidden">
                                 {
-                                    filteredProjects.map((sortProjects, index) => (
+                                    filteredProjects?.map((sortProjects, index) => (
                                         <>
                                             <div key={index} className="flex flex-col w-full">
                                                 <div className="flex flex-col gap-5">
@@ -95,122 +96,127 @@ const Projects = () => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            <div className="grid grid-cols-1 gap-16 overflow-hidden">
-                                {filteredProjects.map((sortProjects, index) => (
+                            <div className="grid grid-cols-1 gap-16 overflow-hidden rounded-[23px] shadow-xl">
+                                {filteredProjects?.map((sortProjects, index) => (
                                     <>
-                                        <div
-                                            key={index}
-                                            className={`p-5 rounded-lg border border-grayDarkAlltext bg-black dark:backdrop-blur-sm flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} w-full items-center gap-6`}
-                                        >
-                                            {/* icons - small */}
-                                            <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
-                                                <Link
-                                                    to={sortProjects.github_link}
-                                                    className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <SlSocialGithub />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RiGlobalLine />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RxVideo />
-                                                </Link>
-                                                {/* <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <GrUpdate />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <TiDelete />
-                                                </Link> */}
-                                            </div>
-
-                                            {/* Image Section */}
-                                            <div className="relative h-80 md:h-96 md:w-1/2 overflow-hidden rounded-lg group">
-                                                <figure>
-                                                    <img
-                                                        src={sortProjects.details_image}
-                                                        alt="project"
-                                                        className="w-full h-auto object-cover transition-transform duration-[2500ms] ease-in-out group-hover:translate-y-[calc(-100%+10rem)]"
-                                                        style={{ transition: 'transform 8.5s ease-in-out' }}
-                                                    />
-                                                </figure>
-                                            </div>
-
-                                            <div className="flex flex-col md:w-1/2 gap-4">
-
-                                                {/*icons-large*/}
-                                                <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
+                                        <div className="relative rounded-[23px] shadow-[0_30px_60px_-20px_rgba(0,0,0,.35)] group">
+                                            {/* Frosted glass layer */}
+                                            <span className="rounded-[23px] pointer-events-none absolute inset-0 bg-white/10 backdrop-blur-lg z-0" />
+                                            <div
+                                                className={`relative rounded-[23px] z-10 flex flex-col gap-10 md:flex-row md:items-start p-6 md:p-10
+                                                ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                                                style={{
+                                                    backgroundImage:
+                                                        'radial-gradient(80% 6% at 50% 103%, rgba(111, 56, 252, 0.267), transparent)',
+                                                }}
+                                            >
+                                                {/* icons - small */}
+                                                <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
                                                     <Link
                                                         to={sortProjects.github_link}
-                                                        className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                                                     >
                                                         <SlSocialGithub />
                                                     </Link>
                                                     <Link
                                                         to={sortProjects.live_link}
-                                                        className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                                                     >
                                                         <RiGlobalLine />
                                                     </Link>
                                                     <Link
                                                         to={sortProjects.live_link}
-                                                        className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                                                     >
                                                         <RxVideo />
                                                     </Link>
                                                     {/* <Link
                                                         to={sortProjects.live_link}
-                                                        className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl" 
                                                     >
                                                         <GrUpdate />
                                                     </Link>
                                                     <Link
                                                         to={sortProjects.live_link}
-                                                        className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl" 
                                                     >
                                                         <TiDelete />
                                                     </Link> */}
                                                 </div>
 
-                                                {/* Content Section */}
-                                                <p className="text-4xl font-semibold text-white  mt-10 mb-2">{sortProjects.title}</p>
-                                                <p className="text-gray-300 mb-5">{sortProjects.description}</p>
+                                                {/* Image Section */}
+                                                <div className="md:w-1/2 aspect-video md:aspect-[14/9] md:h-96 overflow-hidden rounded-xl ">
+                                                    <figure>
+                                                        <img
+                                                            src={sortProjects.details_image}
+                                                            alt="project"
+                                                            className="h-full w-full object-cover transition-transform duration-[2500ms] ease-in-out group-hover:translate-y-[calc(-100%+5rem)]"
+                                                            style={{ transition: 'transform 8.5s ease-in-out' }} />
+                                                    </figure>
+                                                </div>
 
-                                                {/* language */}
-                                                <div className="grid grid-cols-3 gap-2">
-                                                    {sortProjects.language
-                                                        ?.split(",")
-                                                        ?.map((tech, i) => (
-                                                            <span
-                                                                key={i}
-                                                                className="text-sm uppercase
-                                                               font-semibold p-1 rounded-full tracking-wider gradientHover"
+                                                <div className="flex flex-col md:w-1/2 gap-4 overflow-hidden">
+
+                                                    {/*icons-large*/}
+                                                    <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
+                                                        <Link
+                                                            to={sortProjects.github_link}
+                                                            className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        >
+                                                            <SlSocialGithub />
+                                                        </Link>
+
+                                                        <Link
+                                                            to={sortProjects.live_link}
+                                                            className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        >
+                                                            <RiGlobalLine />
+                                                        </Link>
+                                                        <Link
+                                                            to={sortProjects.live_link}
+                                                            className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                                                        >
+                                                            <RxVideo />
+                                                        </Link>
+                                                        {/* <Link
+                                                            to={sortProjects.live_link}
+                                                            className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl" 
+                                                        >
+                                                            <GrUpdate />
+                                                        </Link>
+                                                        <Link
+                                                            to={sortProjects.live_link}
+                                                           className="w-12 h-12 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl" 
+                                                        >
+                                                            <TiDelete />
+                                                        </Link> */}
+                                                    </div>
+
+                                                    {/* Content Section */}
+                                                    <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-10">{sortProjects.title}</p>
+                                                    <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">{sortProjects.description}</p>
+
+                                                    {/* language */}
+                                                    <ul className="flex flex-wrap gap-2">
+                                                        {sortProjects.language?.split(",")?.map((lang) => (
+                                                            <li
+                                                                key={lang}
+                                                                className="rounded-lg px-3 py-1 text-[13px] font-medium text-textSmalllight dark:text-slate-200 backdrop-blur-md                bg-black/10 dark:bg-white/10"
                                                             >
-                                                                {tech.trim()}
-                                                            </span>
-                                                        ))
-                                                    }
+                                                                {lang}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </>
                                 ))}
                             </div>
-
                         </TabPanel>
-                        <TabPanel></TabPanel>
+                        <TabPanel>
+                         
+                        </TabPanel>
                     </div>
                 </Tabs>
             </div>
