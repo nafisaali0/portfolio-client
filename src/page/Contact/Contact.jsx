@@ -9,10 +9,10 @@ import { Link } from "react-router-dom";
 const Contact = () => {
     return (
         <>
-            <div className="max-w-4xl p-5 mx-auto mt-52 overflow-hidden">
+            <div className="max-w-4xl p-5 mx-auto mt-52 mb-10 overflow-hidden">
                 <div className="flex flex-col items-start justify-center">
                     <div className="flex items-center justify-center gap-5 my-3 text-left">
-                        <div className="lg:text-[135px] md:text-[120px] text-[60px] font-extrabold uppercase leading-[0.9em]">Let's</div>
+                        <div className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]">Let's</div>
                         <div className="w-10 h-10 lg:w-20 lg:h-20 flex items-center justify-center flex-row">
                             <Link to={'/'} target="_blank">
                                 <FaWhatsapp className="text-[40px] cursor-pointer hover:animate-spin hover:transition hover:duration-[400ms] hover:ease-in-out" title="whatsapp" />
@@ -27,31 +27,31 @@ const Contact = () => {
                         <div className="flex justify-end items-center flex-1 flex-wrap gap-2 p-2">
                             <Link
                                 to="resume_link"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <PiFileArrowDownFill />
                             </Link>
                             <Link
                                 to="github_link"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <VscGithubInverted />
                             </Link>
                             <Link
                                 to="linkedin_link"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <TbBrandLinkedinFilled />
                             </Link>
                             <Link
                                 to="linkedin_link"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <TfiEmail />
                             </Link>
                             {/* Open the modal using document.getElementById('ID').showModal() method */}
                             <div
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                                 onClick={() => document.getElementById('my_modal_5').showModal()}
                             >
                                 <BsChatTextFill />
@@ -80,7 +80,7 @@ const Contact = () => {
                                                 </div>
                                                 <div className="relative inline-block group my-2">
                                                     <button className="relative z-10 px-8 py-2 border-2 border-grayDarkAlltext dark:border-white rounded-full text-black dark:text-white bg-transparent transition-all duration-300 ease-in-out overflow-hidden">
-                                                        Back To Home
+                                                        Send
                                                     </button>
                                                     <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f43f5e] via-[#fb923c] to-[#f43f5e] opacity-60 scale-0 group-hover:scale-125 group-hover:opacity-90 transition-all duration-[900ms] ease-out blur-md z-0" />
                                                 </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                             </dialog>
                         </div>
                     </div>
-                    <div className="w-full relative h-px bg-grayDarkProfileText mt-44 flex justify-center items-center">
+                    <div className="w-full relative h-px inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C]  mt-44 flex justify-center items-center">
                         <div className="absolute px-4 py-2 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black shadow-2xl rounded-full">
                             Design & Development by
                             <span className="underline px-1 gradientHover">
