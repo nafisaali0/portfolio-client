@@ -5,8 +5,8 @@ const About = () => {
     <>
       <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
         <h1 className="text-2xl font-bold mb-6 dark:text-grayDarkAlltext">About</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-2 items-start lg:relative">
-          <div>
+        <div className="flex items-center gap-3 flex-col md:flex-row">
+          <div className="flex-1">
             <p className="text-justify leading-relaxed dark:text-white">
               My coding journey started in 2019, right after finishing college, when I began building simple websites using HTML and CSS with Notepad and online resources like W3Schools.
               During my university years, starting in 2020, I explored languages such as C, C++, Java, and Python.<br /><br />
@@ -18,7 +18,7 @@ const About = () => {
               I am someone who keeps going, even when things get tough. I like to keep improving my skills and exploring new things. Outside of coding, I love listening to music and expressing myself through art.
             </p>
           </div>
-          <div className="lg:absolute lg:top-0 lg:right-0 lg:w-1/3 md:mx-auto">
+          <div className="w-full md:w-1/3">
             <DotLottieReact
               src="https://lottie.host/126ec5b3-1a92-4c89-9e64-e37dbf02c5ba/nY7IUYiGOk.lottie"
               background="transparent"
