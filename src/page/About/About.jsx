@@ -13,7 +13,7 @@ const About = () => {
               Motivated by a desire to freelance, <span className="text-emerald-500 dark:text-emerald-600">I completed a course on Elementor and WooCommerce, which gave me insight into CMS-based development.</span>
               To strengthen my frontend skills, I took a self-taught approach—developing over <span className="text-emerald-500 dark:text-emerald-600">10 static projects based on Figma designs from a YouTube creator as inspiration,</span>
               while independently writing all the code to deepen my understanding of layout.<br /><br />
-              In 2023, <span className="text-emerald-500 dark:text-emerald-600">I completed a 6-month intensive course focused on modern web development, where I learned how to build full-stack applications using React.js, Node.js, and MongoDB.</span>
+              In 2023, <span className="text-emerald-500 dark:text-emerald-600">I completed a 6-month intensive course focused on modern web development, where I learned how to build full-stack applications using React.js, Node.js, and MongoDB. </span>
               During this course, I developed several projects — from basic websites to advanced applications — three of which I showcase as my featured work.<br /><br />
               I am someone who keeps going, even when things get tough. I like to keep improving my skills and exploring new things. Outside of coding, I love listening to music and expressing myself through art.
             </p>
