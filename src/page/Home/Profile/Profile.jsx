@@ -6,6 +6,8 @@ import { MdLocationCity } from "react-icons/md";
 import { VscGithubInverted } from "react-icons/vsc";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { PiFileArrowDownFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
+import { LINKS } from '../../../components/Link/LinkStore'
 
 
 const Profile = () => {
@@ -36,21 +38,27 @@ const Profile = () => {
                                 <span className="gradientHover">Dhaka Bangladesh</span>
                             </div>
                             {/* Social Links */}
-                            <div className="flex justify-start items-center gap-3 cursor-pointer">
+                            <div className="flex justify-start items-center gap-3 ">
                                 {/* LinkedIn */}
                                 <div className="flex items-center gap-1">
                                     <TbBrandLinkedinFilled className="w-5 h-5 text-[#0077B5] border-[#0077B5]" />
-                                    <span className="gradientHover">LinkedIn</span>
+                                    <Link target="_blank" to={LINKS.linkedIn} >
+                                        <span className="gradientHover">LinkedIn</span>
+                                    </Link>
                                 </div>
                                 {/* Github */}
                                 <div className="flex items-center gap-1">
                                     <VscGithubInverted className="w-5 h-5 dark:text-white" />
-                                    <span className="gradientHover">Github</span>
+                                    <Link target="_blank" to={LINKS.github}>
+                                        <span className="gradientHover">Github</span>
+                                    </Link>
                                 </div>
                                 {/* Resume */}
                                 <div className="flex items-center gap-1">
                                     <PiFileArrowDownFill className="w-5 h-5 dark:text-white" />
-                                    <span className="gradientHover">Resume</span>
+                                    <Link target="_blank" to={LINKS.resume}>
+                                        <span className="gradientHover">Resume</span>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

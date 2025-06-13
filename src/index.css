@@ -8,12 +8,12 @@ html {
   color: black !important;
   box-sizing: border-box;
 }
+
 /* When dark mode is active (.dark class on <html> or <body>) */
 .dark{
   background-color: rgba(24, 24, 27, 1) !important; /* or any dark color */
-  color: white !important;
+  color: white !important;   
 }
-
 @layer components {
   .gradientBG {
     @apply bg-gradient-to-r from-orangeDeep via-grayLightProfileText to-orangeSoft text-transparent bg-clip-text;
@@ -23,3 +23,5 @@ html {
     @apply hover:bg-gradient-to-r hover:from-orangeDeep hover:via-grayLightProfileText hover:to-orangeSoft hover:text-transparent hover:bg-clip-text;
   }
 }
+
+

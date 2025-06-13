@@ -39,7 +39,7 @@ const Education = () => {
                 <h1 className="text-2xl font-bold dark:text-grayDarkAlltext">Education Background</h1>
 
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
-                    <TabList className={"cursor-pointer flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
+                    <TabList className={"flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
                         <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Academic</Tab>
                         <Tab className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Course's Certificates</Tab>
                     </TabList>

@@ -5,8 +5,34 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { TfiEmail } from "react-icons/tfi";
 import { VscGithubInverted } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import { LINKS } from "../../components/Link/LinkStore";
+import Swal from "sweetalert2";
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    
+    const form = useRef()
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_4gu69xm', 'template_b0bsejm', form.current, 'GMwd2_s7nL2f8AfHQ')
+            .then((result) => {
+                console.log(result.text);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Thanks to contact with me",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }, (error) => {
+                console.log(error.text);
+            });
+
+    };
+
     return (
         <>
             <div className="max-w-4xl p-5 mx-auto mt-52 mb-10 overflow-hidden">
@@ -14,9 +40,14 @@ const Contact = () => {
                     <div className="flex items-center justify-center gap-5 my-3 text-left">
                         <div className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]">Let's</div>
                         <div className="w-10 h-10 lg:w-20 lg:h-20 flex items-center justify-center flex-row">
-                            <Link to={'/'} target="_blank">
-                                <FaWhatsapp className="text-[40px] cursor-pointer hover:animate-spin hover:transition hover:duration-[400ms] hover:ease-in-out" title="whatsapp" />
-                            </Link>
+                            <a
+                                href={LINKS.whatsapp}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="WhatsApp"
+                            >
+                                <FaWhatsapp className="text-[40px]  hover:animate-spin hover:transition hover:duration-[400ms] hover:ease-in-out" title="whatsapp" />
+                            </a>
                         </div>
                         <div className="lg:text-[135px] md:text-[100px] text-[60px] font-extrabold uppercase leading-[0.9em]">Talk</div>
                     </div>
@@ -25,30 +56,35 @@ const Contact = () => {
                             <p>Although I’m currently looking for opportunities, my inbox is always open.</p>
                         </div>
                         <div className="flex justify-end items-center flex-1 flex-wrap gap-2 p-2">
-                            <Link
-                                to="resume_link"
+                            <a
+                                href={LINKS.resume}
+                                target="_blank"
                                 className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <PiFileArrowDownFill />
-                            </Link>
+                            </a>
                             <Link
-                                to="github_link"
+                                to={LINKS.github}
+                                target="_blank"
                                 className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <VscGithubInverted />
                             </Link>
                             <Link
-                                to="linkedin_link"
+                                to={LINKS.linkedIn}
+                                target="_blank"
                                 className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <TbBrandLinkedinFilled />
                             </Link>
-                            <Link
-                                to="linkedin_link"
+                            <a
+                                href={LINKS.email}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
                             >
                                 <TfiEmail />
-                            </Link>
+                            </a>
                             {/* Open the modal using document.getElementById('ID').showModal() method */}
                             <div
                                 className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
@@ -61,25 +97,25 @@ const Contact = () => {
                                     <div className="modal-action dark:bg-black">
                                         {/* form */}
                                         <div className="w-full">
-                                            <form className="bg-white px-8 pt-6 pb-8 mb-4 dark:bg-black">
+                                            <form ref={form} onSubmit={sendEmail} className="bg-white px-8 pt-6 pb-8 mb-4 dark:bg-black">
                                                 <div className="mb-4">
                                                     <label className="block text-grayLightProfileText dark:text-grayDarkAlltext text-sm font-bold mb-2" htmlFor="name">
                                                         Name
                                                     </label>
-                                                    <input className=" dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-grayLightProfileText dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="name" />
+                                                    <input type="text" name="user_name" className=" dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-grayLightProfileText dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="name" />
                                                 </div>
                                                 <div className="mb-4">
                                                     <label className="block text-grayLightProfileText dark:text-grayDarkAlltext text-sm font-bold mb-2" htmlFor="email">
                                                         Email
                                                     </label>
-                                                    <input className="dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-gray-700 dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Username" />
+                                                    <input type="text" name="user_email" className="dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-gray-700 dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Username" />
                                                 </div>
                                                 <div className="mb-4">
                                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-grayLightProfileText dark:text-grayDarkAlltext">Your message</label>
-                                                    <textarea id="message" rows="4" className="dark:bg-black block p-2.5 w-full text-sm text-grayLightProfileText appearance-none rounded-lg border border-grayDarkAlltext dark:text-grayDarkAlltext shadow focus:outline-none" placeholder="Drop your comments here..."></textarea>
+                                                    <textarea name="message" id="message" rows="4" className="dark:bg-black block p-2.5 w-full text-sm text-grayLightProfileText appearance-none rounded-lg border border-grayDarkAlltext dark:text-grayDarkAlltext shadow focus:outline-none" placeholder="Drop your comments here..."></textarea>
                                                 </div>
                                                 <div className="relative inline-block group my-2">
-                                                    <button className="relative z-10 px-8 py-2 border-2 border-grayDarkAlltext dark:border-white rounded-full text-black dark:text-white bg-transparent transition-all duration-300 ease-in-out overflow-hidden">
+                                                    <button type='submit' value="Send" className="relative z-10 px-8 py-2 border-2 border-grayDarkAlltext dark:border-white rounded-full text-black dark:text-white bg-transparent transition-all duration-300 ease-in-out overflow-hidden">
                                                         Send
                                                     </button>
                                                     <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f43f5e] via-[#fb923c] to-[#f43f5e] opacity-60 scale-0 group-hover:scale-125 group-hover:opacity-90 transition-all duration-[900ms] ease-out blur-md z-0" />
@@ -99,7 +135,7 @@ const Contact = () => {
                         <div className="absolute px-4 py-2 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black shadow-2xl rounded-full">
                             Design & Development by
                             <span className="underline px-1 gradientHover">
-                                <Link to="/">Nafisa Ali</Link>
+                                <Link target="_blank" to={LINKS.github}>Nafisa Ali</Link>
                             </span>
                         </div>
                     </div>
