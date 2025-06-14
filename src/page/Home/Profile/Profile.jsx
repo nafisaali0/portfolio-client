@@ -8,6 +8,7 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { PiFileArrowDownFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { LINKS } from '../../../components/Link/LinkStore'
+import HomePageTransition from "../../../components/Animation/HomePageTransition/HomePageTransition";
 
 
 const Profile = () => {
@@ -65,7 +66,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-
+            <HomePageTransition></HomePageTransition>
         </>
     )
 }
