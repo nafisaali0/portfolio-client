@@ -3,6 +3,7 @@ import Skills from "../Skills/Skills"
 
 
 const HomeLayout = () => {
+
     return (
         <>
             <Profile></Profile>
