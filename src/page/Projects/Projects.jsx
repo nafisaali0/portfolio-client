@@ -9,6 +9,7 @@ import { RxVideo } from "react-icons/rx";
 import { GrUpdate } from "react-icons/gr";
 import { TiDelete } from "react-icons/ti";
 import useAdminLocalStorage from "../../hooks/useAdminLocalStorage";
+import Title from "../../components/Title/Title";
 
 
 const Projects = () => {
@@ -25,7 +26,7 @@ const Projects = () => {
 
         <>
             <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
-                <h1 className="text-2xl font-bold dark:text-grayDarkAlltext">Projects</h1>
+                <Title title="Projects"/>
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <div className="flex justify-center items-center mb-10">
                         <TabList className="cursor-pointer flex gap-8 md:gap-9 items-center capitalize md:text-lg text-sm font-semibold my-5 text-black dark:text-grayDarkAlltext">

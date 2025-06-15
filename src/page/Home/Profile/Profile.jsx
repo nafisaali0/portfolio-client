@@ -8,20 +8,49 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { PiFileArrowDownFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { LINKS } from '../../../components/Link/LinkStore'
+import useAOS from "../../../hooks/useAOS";
 
+// const slideUpFadeIn = {
+//     initial: {
+//         y: 0,
+//         opacity: 0
+//     },
+//     animate: {
+//         y: 0,
+//         opacity: 1,
+//         transition: {
+//             duration: 1,
+//             delay: 2,
+//             ease: "easeOut",
+//         },
+//     }
+// };
 
 const Profile = () => {
+
+    useAOS();
+
     return (
         <>
             <div className="max-w-4xl p-5 mt-32 mb-16 mx-auto overflow-hidden">
                 <div className="flex items-center flex-col md:flex-row justify-center lg:space-x-10 md:gap-10">
-                    <div className="inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] rounded-full p-1">
+                    <div
+                        data-aos-delay="500"
+                        data-aos="fade-up"
+                        data-aos-duration="3000"
+                        className="inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] rounded-full p-1"
+                    >
                         <div className="w-full h-full rounded-full">
                             <img src={profile} alt="Avatar" className="w-[200px] h-[200px] object-cover rounded-full border-4 border-white" />
                         </div>
                     </div>
-                    <div>
-                        <div className="text-4xl md:text-left text-center font-semibold dark:text-white">
+                    <div
+                        data-aos-delay="500"
+                        data-aos="fade-up"
+                        data-aos-duration="3000"
+                    >
+                        <div
+                            className="text-4xl md:text-left text-center font-semibold dark:text-white">
                             It's <span>Nafisa</span>.
                             I am a <span className="text-grayLightProfileText dark:text-grayDarkProfileText">Frontend</span>
                         </div>

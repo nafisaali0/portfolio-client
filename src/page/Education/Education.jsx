@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import certificate_one from "../../../public/education/programming_hero_certificate.jpg"
+import Title from '../../components/Title/Title';
 const Education = () => {
 
     const education = [
@@ -36,8 +37,7 @@ const Education = () => {
     return (
         <>
             <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
-                <h1 className="text-2xl font-bold dark:text-grayDarkAlltext">Education Background</h1>
-
+                <Title title="Education Background"/>
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={"flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
                         <Tab className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Academic</Tab>

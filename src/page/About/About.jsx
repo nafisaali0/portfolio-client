@@ -1,10 +1,11 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
+import Title from "../../components/Title/Title"
 
 const About = () => {
   return (
     <>
       <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
-        <h1 className="text-2xl font-bold mb-6 dark:text-grayDarkAlltext">About</h1>
+        <Title title="About" />
         <div className="flex items-center gap-3 flex-col md:flex-row">
           <div className="flex-1">
             <p className="text-justify leading-relaxed dark:text-white">
