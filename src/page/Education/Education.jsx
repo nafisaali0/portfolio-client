@@ -4,7 +4,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import certificate_one from "../../../public/education/programming_hero_certificate.jpg"
 import Title from '../../components/Title/Title';
 import { motion } from 'framer-motion'
-// import eachFadeInAnimation from '../../Utility/eachFadeInAnimation';
 import textReveal from '../../Utility/textReveal';
 import useAOS from '../../hooks/useAOS';
 

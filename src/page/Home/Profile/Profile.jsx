@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { LINKS } from '../../../components/Link/LinkStore'
 import useAOS from "../../../hooks/useAOS";
 
-
 const Profile = () => {
 
     useAOS();
@@ -22,7 +21,6 @@ const Profile = () => {
                     <div
                         data-aos-delay="500"
                         data-aos="fade-up"
-                        data-aos-duration="3000"
                         className="inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] rounded-full p-1"
                     >
                         <div className="w-full h-full rounded-full">
@@ -32,7 +30,6 @@ const Profile = () => {
                     <div
                         data-aos-delay="500"
                         data-aos="fade-up"
-                        data-aos-duration="3000"
                     >
                         <div
                             className="text-4xl md:text-left text-center font-semibold dark:text-white">
