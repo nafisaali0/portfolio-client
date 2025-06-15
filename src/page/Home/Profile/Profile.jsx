@@ -10,21 +10,6 @@ import { Link } from "react-router-dom";
 import { LINKS } from '../../../components/Link/LinkStore'
 import useAOS from "../../../hooks/useAOS";
 
-// const slideUpFadeIn = {
-//     initial: {
-//         y: 0,
-//         opacity: 0
-//     },
-//     animate: {
-//         y: 0,
-//         opacity: 1,
-//         transition: {
-//             duration: 1,
-//             delay: 2,
-//             ease: "easeOut",
-//         },
-//     }
-// };
 
 const Profile = () => {
 

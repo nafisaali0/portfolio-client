@@ -12,7 +12,7 @@ const MainLayout = () => {
     return (
         <>        
             {/* <HomePageTransition /> */}
-            <div className="mb-20">
+            <div className="mb-14">
                 <Navbar></Navbar>
             </div>
             <Outlet></Outlet>
