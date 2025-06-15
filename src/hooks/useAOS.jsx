@@ -6,7 +6,7 @@ const useAOS = (options = {}) => {
     useEffect(() => {
         AOS.init({
             duration: 1500,
-            easing: "ease-in-out",
+            easing: "ease-in-sine",
             once: true,
             ...options, // override defaults if needed
         });

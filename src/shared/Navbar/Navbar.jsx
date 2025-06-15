@@ -32,7 +32,7 @@ const Navbar = () => {
                                 variants={eachFadeInAnimation}
                                 initial="initial"
                                 animate="animate"
-                                custom={0} >
+                                custom={0}>
                                 <NavLink
                                     to="/education-background"
                                     className={({ isActive }) =>
