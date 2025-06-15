@@ -1,8 +1,6 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 import Title from "../../components/Title/Title"
 import useAOS from './../../hooks/useAOS';
-import textReveal from "../../Utility/textReveal";
-import { motion } from 'framer-motion';
 
 const About = () => {
   useAOS();
@@ -15,10 +13,7 @@ const About = () => {
             data-aos="fade-right"
             data-aos-offset="300"
             className="flex-1">
-            <motion.p
-              variants={textReveal}
-              initial="initial"
-              animate="animate"
+            <p
               className="text-justify leading-relaxed dark:text-white">
               My coding journey started in 2019, right after finishing college, when I began building simple websites using HTML and CSS with Notepad and online resources like W3Schools.
               During my university years, starting in 2020, I explored languages such as C, C++, Java, and Python.<br /><br />
@@ -28,7 +23,7 @@ const About = () => {
               In 2023, <span className="text-emerald-500 dark:text-emerald-600">I completed a 6-month intensive course focused on modern web development, where I learned how to build full-stack applications using React.js, Node.js, and MongoDB. </span>
               During this course, I developed several projects — from basic websites to advanced applications — three of which I showcase as my featured work.<br /><br />
               I am someone who keeps going, even when things get tough. I like to keep improving my skills and exploring new things. Outside of coding, I love listening to music and expressing myself through art.
-            </motion.p>
+            </p>
           </div>
           <div
             data-aos="fade-left"
