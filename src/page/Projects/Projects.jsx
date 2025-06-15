@@ -11,6 +11,7 @@ import { TiDelete } from "react-icons/ti";
 import useAdminLocalStorage from "../../hooks/useAdminLocalStorage";
 import Title from "../../components/Title/Title";
 import useAOS from "../../hooks/useAOS";
+import Swal from "sweetalert2";
 
 const Projects = () => {
 
@@ -22,6 +23,23 @@ const Projects = () => {
         setSelectedTab(index);
     };
     useAOS();
+    const handleDelete = (_id) => {
+
+        fetch(`http://localhost:5000/projects/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your project has been deleted.',
+                        'success'
+                    )
+                }
+            })
+    }
     return (
 
         <>
@@ -139,12 +157,12 @@ const Projects = () => {
                                                                 >
                                                                     <GrUpdate />
                                                                 </Link>
-                                                                <Link
-                                                                    to={sortProjects.live_link}
+                                                                <li
+                                                                    onClick={() => handleDelete(sortProjects._id)} title="Delete"
                                                                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                                                                 >
                                                                     <TiDelete />
-                                                                </Link>
+                                                                </li>
                                                             </>
                                                             : ""
                                                     }
