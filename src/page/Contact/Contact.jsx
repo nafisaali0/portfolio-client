@@ -172,7 +172,7 @@ const Contact = () => {
                         transition={{
                             duration: 1.5,
                             ease: "easeOut",
-                            delay: 0.3,
+                            delay: 0.5,
                         }}
                         className="w-full relative h-[0.5px] inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] mt-44 flex justify-center items-center">
                         <div className="absolute px-4 py-2 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black shadow-2xl rounded-full">

@@ -45,7 +45,7 @@ const Education = () => {
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={"flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
                         <Tab
-                            data-aos="fade-right"                            
+                            data-aos="fade-right"
                             data-aos-offset="300"
                             data-aos-delay="600"
                             className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Academic</Tab>
@@ -90,7 +90,10 @@ const Education = () => {
                         </TabPanel>
                         <TabPanel>
                             {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> */}
-                            <div className="max-w-full mx-auto p-4">
+                            <div
+                                data-aos="fade-right"
+                                data-aos-offset="300"
+                                className="max-w-full mx-auto p-4">
                                 <img
                                     src={certificate_one}
                                     alt="Descriptive Alt Text"
