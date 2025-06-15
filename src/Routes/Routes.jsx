@@ -7,36 +7,42 @@ import CreateProjects from "../page/CreateProjects/CreateProjects";
 import Education from "../page/Education/Education";
 import About from "../page/About/About";
 import Contact from "../page/Contact/Contact";
+import UpdateProject from "../page/UpdateProject/UpdateProject";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout></MainLayout>,
-        errorElement: <ErrorPage></ErrorPage>,
+        element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
-                element: <HomeLayout></HomeLayout>
+                element: <HomeLayout />
             },
             {
                 path: "/projects",
-                element: <Projects></Projects>
+                element: <Projects />
             },
             {
                 path: "/create-procjects",
-                element: <CreateProjects></CreateProjects>
+                element: <CreateProjects />
+            },
+            {
+                path: "/update-project/:id",
+                element: <UpdateProject />,
+                loader: ({ params }) => fetch(`http://localhost:5000/projects/${params.id}`)
             },
             {
                 path: "/education-background",
-                element: <Education></Education>
+                element: <Education />
             },
             {
                 path: "/about",
-                element: <About></About>
+                element: <About />
             },
             {
                 path: "/contact",
-                element: <Contact></Contact>
+                element: <Contact />
             },
         ],
     },

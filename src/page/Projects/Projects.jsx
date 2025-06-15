@@ -84,7 +84,7 @@ const Projects = () => {
 
                                                         <>
                                                             <Link
-                                                                to={sortProjects.live_link}
+                                                                to={`/update-project/${sortProjects._id}`}
                                                                 className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                                                             >
                                                                 <GrUpdate />
@@ -134,7 +134,7 @@ const Projects = () => {
 
                                                             <>
                                                                 <Link
-                                                                    to={sortProjects.live_link}
+                                                                    to={`/update-project/${sortProjects._id}`}
                                                                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                                                                 >
                                                                     <GrUpdate />

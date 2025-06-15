@@ -59,7 +59,7 @@ const CreateProjects = () => {
         const adminEmail = localStorage.getItem('userEmail');
 
         const newProject = { title, description, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
-        console.log(newProject)
+        // console.log(newProject)
         fetch('http://localhost:5000/projects', {
             method: 'POST',
             headers: {
