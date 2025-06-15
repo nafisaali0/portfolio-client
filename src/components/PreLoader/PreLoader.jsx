@@ -11,7 +11,7 @@ const PreLoader = () => {
                         loop
                         autoplay
                         speed="1"
-                        className="w-[400px] h-[400px] md:w-[700px] md:h-[700px]"
+                        className="w-[400px] h-[400px] md:w-[600px] md:h-[600px]"
                     />
                 </div>
             </div>

@@ -9,10 +9,16 @@ import { LINKS } from "../../components/Link/LinkStore";
 import Swal from "sweetalert2";
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
+import useAOS from './../../hooks/useAOS';
+import { motion } from 'framer-motion';
+import textReveal from "../../Utility/textReveal";
+import eachFadeInAnimation from "../../Utility/eachFadeInAnimation";
+import RollingText from "../../components/Animation/RollingText/RollingText";
 
 const Contact = () => {
-    
+
     const form = useRef()
+    useAOS();
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -38,7 +44,12 @@ const Contact = () => {
             <div className="max-w-4xl p-5 mx-auto mt-52 mb-10 overflow-hidden">
                 <div className="flex flex-col items-start justify-center">
                     <div className="flex items-center justify-center gap-5 my-3 text-left">
-                        <div className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]">Let's</div>
+                        {/* <div className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]">Let's</div> */}
+                        <RollingText
+                            text="Let's"
+                            className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]"
+                            direction="down"
+                        />
                         <div className="w-10 h-10 lg:w-20 lg:h-20 flex items-center justify-center flex-row">
                             <a
                                 href={LINKS.whatsapp}
@@ -49,31 +60,55 @@ const Contact = () => {
                                 <FaWhatsapp className="text-[40px]  hover:animate-spin hover:transition hover:duration-[400ms] hover:ease-in-out" title="whatsapp" />
                             </a>
                         </div>
-                        <div className="lg:text-[135px] md:text-[100px] text-[60px] font-extrabold uppercase leading-[0.9em]">Talk</div>
+                        <RollingText
+                            text="Talk"
+                            className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]"
+                            direction="down"
+                        />
                     </div>
                     <div className="flex justify-between items-center flex-col lg:flex-row w-full mt-6">
-                        <div className="flex-1 p-2 text-center lg:text-start text-sm lg:text-lg  font-semibold">
-                            <p>Although I’m currently looking for opportunities, my inbox is always open.</p>
+                        <div
+                            data-aos="fade-right"
+                            data-aos-offset="300"
+                            className="flex-1 p-2 text-center lg:text-start text-sm lg:text-lg  font-semibold">
+                            <motion.p
+                                variants={textReveal}
+                                initial="initial"
+                                animate="animate"
+                                style={{ overflow: "hidden", whiteSpace: "nowrap" }}
+                            > Although I’m currently looking for <br></br> opportunities, my inbox is always open.</motion.p>
                         </div>
-                        <div className="flex justify-end items-center flex-1 flex-wrap gap-2 p-2">
+                        <div
+                            data-aos="fade-left"
+                            data-aos-offset="300"
+                            className="flex justify-end items-center flex-1 flex-wrap gap-2 p-2">
                             <a
                                 href={LINKS.resume}
                                 target="_blank"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center text-lg transition-transform duration-300 hover:-translate-y-1"
                             >
                                 <PiFileArrowDownFill />
                             </a>
                             <Link
                                 to={LINKS.github}
                                 target="_blank"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                variants={eachFadeInAnimation}
+                                initial="initial"
+                                animate="animate"
+                                custom={0}
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center text-lg transition-transform duration-300 hover:-translate-y-1"
                             >
-                                <VscGithubInverted />
+                                <VscGithubInverted
+                                    variants={eachFadeInAnimation}
+                                    initial="initial"
+                                    animate="animate"
+                                    custom={0}
+                                />
                             </Link>
                             <Link
                                 to={LINKS.linkedIn}
                                 target="_blank"
-                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-lg"
+                                className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center text-lg transition-transform duration-300 hover:-translate-y-1"
                             >
                                 <TbBrandLinkedinFilled />
                             </Link>
@@ -131,16 +166,26 @@ const Contact = () => {
                             </dialog>
                         </div>
                     </div>
-                    <div className="w-full relative h-px inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C]  mt-44 flex justify-center items-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 1.5,
+                            ease: "easeOut",
+                            delay: 0.3,
+                        }}
+                        className="w-full relative h-[0.5px] inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] mt-44 flex justify-center items-center">
                         <div className="absolute px-4 py-2 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black shadow-2xl rounded-full">
-                            Design & Development by
-                            <span className="underline px-1 gradientHover">
-                                <Link target="_blank" to={LINKS.github}>Nafisa Ali</Link>
-                            </span>
+                            <h1>
+                                Design & Development by
+                                <span className="underline px-1 gradientHover">
+                                    <Link target="_blank" to={LINKS.github}>Nafisa Ali</Link>
+                                </span>
+                            </h1>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
