@@ -10,7 +10,6 @@ const Navbar = () => {
     return (
         <>
             <div className="fixed top-0 z-50 w-full bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
-                {/* <div className="max-w-6xl mx-auto bg-gray-500 flex justify-center"> */}
                 <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                     {/* small screen logo */}
                     <div className="flex items-center md:hidden">
@@ -64,11 +63,7 @@ const Navbar = () => {
                                 </NavLink>
                             </motion.li>
 
-                            <motion.li
-                                variants={eachFadeInAnimation}
-                                initial="initial"
-                                animate="animate"
-                                custom={2} >
+                            <li>
                                 <Link to="/">
                                     <figure>
                                         <img
@@ -78,7 +73,7 @@ const Navbar = () => {
                                         />
                                     </figure>
                                 </Link>
-                            </motion.li>
+                            </li>
 
                             <motion.li
                                 variants={eachFadeInAnimation}
