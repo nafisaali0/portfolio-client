@@ -1,16 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { motion } from "framer-motion";
 
-// const container = {
-//     hidden: { opacity: 0 },
-//     visible: {
-//         opacity: 1,
-//         transition: {
-//             staggerChildren: 0.08, // delay between letters
-//         },
-//     },
-// };
-
 const container = {
     hidden: { opacity: 0 },
     visible: {

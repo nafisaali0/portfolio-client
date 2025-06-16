@@ -15,18 +15,21 @@ const Small_Icons = ({ id, github_link, live_link }) => {
             <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
                 <Link
                     to={github_link}
+                    target="_blank"
                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <SlSocialGithub />
                 </Link>
                 <Link
                     to={live_link}
+                    target="_blank"
                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <RiGlobalLine />
                 </Link>
                 <Link
                     to={live_link}
+                    target="_blank"
                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <RxVideo />
@@ -37,6 +40,7 @@ const Small_Icons = ({ id, github_link, live_link }) => {
                         <>
                             <Link
                                 to={`/update-project/${id}`}
+                                target="_blank"
                                 className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                             >
                                 <GrUpdate />

@@ -19,7 +19,7 @@ const Profile = () => {
             <div className="max-w-4xl p-5 mt-32 mb-16 mx-auto overflow-hidden">
                 <div className="flex items-center flex-col md:flex-row justify-center lg:space-x-10 md:gap-10">
                     <div
-                        data-aos-delay="500"
+                        // data-aos-delay="500"
                         data-aos="fade-up"
                         className="inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] rounded-full p-1"
                     >
@@ -28,7 +28,7 @@ const Profile = () => {
                         </div>
                     </div>
                     <div
-                        data-aos-delay="500"
+                        // data-aos-delay="500"
                         data-aos="fade-up"
                     >
                         <div

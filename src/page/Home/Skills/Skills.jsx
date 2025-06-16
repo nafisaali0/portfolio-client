@@ -53,7 +53,7 @@ const Skills = () => {
                     <TabList className={" flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
                         <Tab
                             data-aos="fade-up"
-                            data-aos-delay="500"
+                            // data-aos-delay="500"
                             className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Front End</Tab>
                         <Tab
                             data-aos="fade-up"
@@ -61,7 +61,7 @@ const Skills = () => {
                             className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Back End</Tab>
                         <Tab
                             data-aos="fade-up"
-                            data-aos-delay="500"
+                            // data-aos-delay="500"
                             className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Tools</Tab>
                     </TabList>
                     <div className="my-5 font-medium text-sm text-black dark:text-grayDarkAlltext">

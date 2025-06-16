@@ -9,12 +9,8 @@ import PropTypes from "prop-types";
 
 
 const LargeIcons = ({ index, id, github_link, live_link }) => {
-    const isAdmin = useAdminLocalStorage();
 
-    // index = { index }
-    // id = { sortProjects._id }
-    // github_link = { sortProjects.github_link }
-    // live_link = { sortProjects.live_link }
+    const isAdmin = useAdminLocalStorage();
 
     return (
         <>
@@ -22,18 +18,21 @@ const LargeIcons = ({ index, id, github_link, live_link }) => {
             <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
                 <Link
                     to={github_link}
+                    target="_blank"
                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <SlSocialGithub />
                 </Link>
                 <Link
                     to={live_link}
+                    target="_blank"
                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <RiGlobalLine />
                 </Link>
                 <Link
                     to={live_link}
+                    target="_blank"
                     className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <RxVideo />
@@ -44,6 +43,7 @@ const LargeIcons = ({ index, id, github_link, live_link }) => {
                         <>
                             <Link
                                 to={`/update-project/${id}`}
+                                target="_blank"
                                 className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                             >
                                 <GrUpdate />
