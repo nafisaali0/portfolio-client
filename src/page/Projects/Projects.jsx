@@ -2,44 +2,22 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 import useProjectsCategory from "../../hooks/useProjectsCategory";
 import { useState } from "react";
 import useTabProjects from "../../hooks/useTabProjects";
-import { Link } from "react-router-dom";
-import { RiGlobalLine } from "react-icons/ri";
-import { SlSocialGithub } from "react-icons/sl";
-import { RxVideo } from "react-icons/rx";
-import { GrUpdate } from "react-icons/gr";
-import { TiDelete } from "react-icons/ti";
-import useAdminLocalStorage from "../../hooks/useAdminLocalStorage";
 import Title from "../../components/Title/Title";
 import useAOS from "../../hooks/useAOS";
-import Swal from "sweetalert2";
+import LargeIcons from './LargeIcons';
+import Small_Icons from "./Small_Icons";
 
 const Projects = () => {
 
-    const isAdmin = useAdminLocalStorage();
+    useAOS();
     const [selectedTab, setSelectedTab] = useState(0);//for Tab list    
     const uniqueCategory = useProjectsCategory()
     const filteredProjects = useTabProjects(selectedTab)
     const handleTabSelect = (index) => {
         setSelectedTab(index);
     };
-    useAOS();
-    const handleDelete = (_id) => {
 
-        fetch(`http://localhost:5000/projects/${_id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.deletedCount > 0) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your project has been deleted.',
-                        'success'
-                    )
-                }
-            })
-    }
+
     return (
 
         <>
@@ -78,46 +56,11 @@ const Projects = () => {
                                             }}
                                         >
                                             {/* icons - small */}
-                                            <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
-                                                <Link
-                                                    to={sortProjects.github_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <SlSocialGithub />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RiGlobalLine />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RxVideo />
-                                                </Link>
-                                                {
-                                                    isAdmin ?
-
-                                                        <>
-                                                            <Link
-                                                                to={`/update-project/${sortProjects._id}`}
-                                                                className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                            >
-                                                                <GrUpdate />
-                                                            </Link>
-                                                            <Link
-                                                                to={sortProjects.live_link}
-                                                                className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                            >
-                                                                <TiDelete />
-                                                            </Link>
-                                                        </>
-                                                        : ""
-                                                }
-
-                                            </div>
+                                            <Small_Icons
+                                                id={sortProjects._id}
+                                                github_link={sortProjects.github_link}
+                                                live_link={sortProjects.live_link}
+                                            />
                                             <div className="flex-1 max-h-[400px] rounded-2xl overflow-hidden group relative">
                                                 <img
                                                     src={sortProjects.details_image}
@@ -127,46 +70,13 @@ const Projects = () => {
                                             </div>
 
                                             <div className="flex-1 flex flex-col gap-5">
-                                                {/*icons-large*/}
-                                                <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
-                                                    <Link
-                                                        to={sortProjects.github_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <SlSocialGithub />
-                                                    </Link>
-                                                    <Link
-                                                        to={sortProjects.live_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <RiGlobalLine />
-                                                    </Link>
-                                                    <Link
-                                                        to={sortProjects.live_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <RxVideo />
-                                                    </Link>
-                                                    {
-                                                        isAdmin ?
-
-                                                            <>
-                                                                <Link
-                                                                    to={`/update-project/${sortProjects._id}`}
-                                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                                >
-                                                                    <GrUpdate />
-                                                                </Link>
-                                                                <li
-                                                                    onClick={() => handleDelete(sortProjects._id)} title="Delete"
-                                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                                >
-                                                                    <TiDelete />
-                                                                </li>
-                                                            </>
-                                                            : ""
-                                                    }
-                                                </div>
+                                                {/* icon-large */}
+                                                <LargeIcons
+                                                    index={index}
+                                                    id={sortProjects._id}
+                                                    github_link={sortProjects.github_link}
+                                                    live_link={sortProjects.live_link}
+                                                />
                                                 <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-10">{sortProjects.title}</p>
                                                 <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">{sortProjects.description}</p>
 
@@ -198,46 +108,11 @@ const Projects = () => {
                                             }}
                                         >
                                             {/* icons - small */}
-                                            <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
-                                                <Link
-                                                    to={sortProjects.github_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <SlSocialGithub />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RiGlobalLine />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RxVideo />
-                                                </Link>
-                                                {
-                                                    isAdmin ?
-
-                                                        <>
-                                                            <Link
-                                                                to={sortProjects.live_link}
-                                                                className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                            >
-                                                                <GrUpdate />
-                                                            </Link>
-                                                            <Link
-                                                                to={sortProjects.live_link}
-                                                                className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                            >
-                                                                <TiDelete />
-                                                            </Link>
-                                                        </>
-                                                        : ""
-                                                }
-
-                                            </div>
+                                            <Small_Icons
+                                                id={sortProjects._id}
+                                                github_link={sortProjects.github_link}
+                                                live_link={sortProjects.live_link}
+                                            />
                                             <div className="flex-1 max-h-[400px] rounded-2xl overflow-hidden group relative">
                                                 <img
                                                     src={sortProjects.details_image}
@@ -247,46 +122,13 @@ const Projects = () => {
                                             </div>
 
                                             <div className="flex-1 flex flex-col gap-5">
-                                                {/*icons-large*/}
-                                                <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
-                                                    <Link
-                                                        to={sortProjects.github_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <SlSocialGithub />
-                                                    </Link>
-                                                    <Link
-                                                        to={sortProjects.live_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <RiGlobalLine />
-                                                    </Link>
-                                                    <Link
-                                                        to={sortProjects.live_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <RxVideo />
-                                                    </Link>
-                                                    {
-                                                        isAdmin ?
-
-                                                            <>
-                                                                <Link
-                                                                    to={sortProjects.live_link}
-                                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                                >
-                                                                    <GrUpdate />
-                                                                </Link>
-                                                                <Link
-                                                                    to={sortProjects.live_link}
-                                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                                >
-                                                                    <TiDelete />
-                                                                </Link>
-                                                            </>
-                                                            : ""
-                                                    }
-                                                </div>
+                                                {/* icon-large */}
+                                                <LargeIcons
+                                                    index={index}
+                                                    id={sortProjects._id}
+                                                    github_link={sortProjects.github_link}
+                                                    live_link={sortProjects.live_link}
+                                                />
                                                 <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-10">{sortProjects.title}</p>
                                                 <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">{sortProjects.description}</p>
 
@@ -318,46 +160,11 @@ const Projects = () => {
                                             }}
                                         >
                                             {/* icons - small */}
-                                            <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
-                                                <Link
-                                                    to={sortProjects.github_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <SlSocialGithub />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RiGlobalLine />
-                                                </Link>
-                                                <Link
-                                                    to={sortProjects.live_link}
-                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                >
-                                                    <RxVideo />
-                                                </Link>
-                                                {
-                                                    isAdmin ?
-
-                                                        <>
-                                                            <Link
-                                                                to={sortProjects.live_link}
-                                                                className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                            >
-                                                                <GrUpdate />
-                                                            </Link>
-                                                            <Link
-                                                                to={sortProjects.live_link}
-                                                                className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                            >
-                                                                <TiDelete />
-                                                            </Link>
-                                                        </>
-                                                        : ""
-                                                }
-
-                                            </div>
+                                            <Small_Icons
+                                                id={sortProjects._id}
+                                                github_link={sortProjects.github_link}
+                                                live_link={sortProjects.live_link}
+                                            />
                                             <div className="flex-1 max-h-[400px] rounded-2xl overflow-hidden group relative">
                                                 <img
                                                     src={sortProjects.details_image}
@@ -368,45 +175,12 @@ const Projects = () => {
 
                                             <div className="flex-1 flex flex-col gap-5">
                                                 {/*icons-large*/}
-                                                <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
-                                                    <Link
-                                                        to={sortProjects.github_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <SlSocialGithub />
-                                                    </Link>
-                                                    <Link
-                                                        to={sortProjects.live_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <RiGlobalLine />
-                                                    </Link>
-                                                    <Link
-                                                        to={sortProjects.live_link}
-                                                        className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                    >
-                                                        <RxVideo />
-                                                    </Link>
-                                                    {
-                                                        isAdmin ?
-
-                                                            <>
-                                                                <Link
-                                                                    to={sortProjects.live_link}
-                                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                                >
-                                                                    <GrUpdate />
-                                                                </Link>
-                                                                <Link
-                                                                    to={sortProjects.live_link}
-                                                                    className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10  dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                                                                >
-                                                                    <TiDelete />
-                                                                </Link>
-                                                            </>
-                                                            : ""
-                                                    }
-                                                </div>
+                                                <LargeIcons
+                                                    index={index}
+                                                    id={sortProjects._id}
+                                                    github_link={sortProjects.github_link}
+                                                    live_link={sortProjects.live_link}
+                                                />
                                                 <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-10">{sortProjects.title}</p>
                                                 <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">{sortProjects.description}</p>
 
