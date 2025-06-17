@@ -58,7 +58,7 @@ const UpdateProject = () => {
 
 
     // sent update projects into to server
-    fetch(`http://localhost:5000/projects/${_id}`, {
+    fetch(`https://portfolio-server-theta-five.vercel.app/projects/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

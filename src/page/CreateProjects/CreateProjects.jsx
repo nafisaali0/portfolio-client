@@ -60,7 +60,7 @@ const CreateProjects = () => {
 
         const newProject = { title, description, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
         // console.log(newProject)
-        fetch('http://localhost:5000/projects', {
+        fetch('https://portfolio-server-theta-five.vercel.app/projects', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

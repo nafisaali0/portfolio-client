@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const DeleteProject = ({ id }) => {
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/projects/${id}`, {
+        fetch(`https://portfolio-server-theta-five.vercel.app/projects/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

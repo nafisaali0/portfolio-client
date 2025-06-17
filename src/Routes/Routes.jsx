@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
             {
                 path: "/update-project/:id",
                 element: <UpdateProject />,
-                loader: ({ params }) => fetch(`http://localhost:5000/projects/${params.id}`)
+                loader: ({ params }) => fetch(`https://portfolio-server-theta-five.vercel.app/projects/${params.id}`)
             },
             {
                 path: "/education-background",
