@@ -6,6 +6,7 @@ import Title from "../../components/Title/Title";
 import useAOS from "../../hooks/useAOS";
 import LargeIcons from './LargeIcons';
 import Small_Icons from "./Small_Icons";
+import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
 const Projects = () => {
 
@@ -16,7 +17,6 @@ const Projects = () => {
     const handleTabSelect = (index) => {
         setSelectedTab(index);
     };
-
 
     return (
 
@@ -48,13 +48,12 @@ const Projects = () => {
                                         <div
                                             data-aos={index % 2 !== 0 ? 'fade-right' : 'fade-left'}
                                             data-aos-offset="300"
-                                            className={`w-full min-h-[500px] flex flex-col md:flex-row justify-center items-center gap-6 p-6 dark:bg-white/10 rounded-3xl md:border md:border-grayDarkAlltext ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                                            className={`w-full min-h-[500px] flex flex-col md:flex-row justify-center items-center gap-5 p-6 dark:bg-white/10 rounded-3xl md:border md:border-grayDarkAlltext ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
                                             style={{
                                                 backgroundImage:
                                                     'radial-gradient(80% 6% at 50% 103%, rgba(111, 56, 252, 0.267), transparent)',
 
-                                            }}
-                                        >
+                                            }}                                        >
                                             {/* icons - small */}
                                             <Small_Icons
                                                 id={sortProjects._id}
@@ -77,9 +76,9 @@ const Projects = () => {
                                                     github_link={sortProjects.github_link}
                                                     live_link={sortProjects.live_link}
                                                 />
-                                                <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-10">{sortProjects.title}</p>
-                                                <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">{sortProjects.description}</p>
-
+                                                <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-6">{sortProjects.title}</p>
+                                                <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">{sortProjects.description}
+                                                </p>
                                                 <ul className="flex flex-wrap gap-2 my-3 w-full">
                                                     {sortProjects.language?.split(",")?.map((lang) => (
                                                         <li

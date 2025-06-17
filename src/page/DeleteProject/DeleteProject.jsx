@@ -20,7 +20,7 @@ const DeleteProject = ({ id }) => {
         <li
             onClick={() => handleDelete(id)}
             title="Delete"
-            className="w-12 h-12 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+            className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
         >
             <TiDelete />
         </li>

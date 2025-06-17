@@ -10,9 +10,9 @@ html {
 }
 
 /* When dark mode is active (.dark class on <html> or <body>) */
-.dark{
+.dark {
   background-color: rgba(24, 24, 27, 1) !important; /* or any dark color */
-  color: white !important;   
+  color: white !important;
 }
 @layer components {
   .gradientBG {
@@ -24,4 +24,19 @@ html {
   }
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
+}

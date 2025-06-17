@@ -11,7 +11,7 @@ export default {
     extend: {
       colors: {
         bodyBG: "#18181B",
-        navBG: "#1a1c1f4d",
+        navBG: "#1a1c1f4d",        
         grayLightProfileText: "#64748B",
         grayDarkProfileText: "#9F9F9F",
         textSmalllight: "#0D1117",
