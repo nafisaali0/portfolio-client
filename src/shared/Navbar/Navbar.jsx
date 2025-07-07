@@ -142,7 +142,7 @@ const Navbar = () => {
                             </label>
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content mt-3 p-4 py-6 text-center space-y-5 font-medium text-grayLightProfileText dark:text-grayDarkAlltext dark:bg-navBG backdrop-blur-2xl rounded-box w-52 shadow"
+                                className="dropdown-content mt-3 p-4 py-6 text-center space-y-5 font-medium text-grayLightProfileText dark:text-grayDarkAlltext dark:bg-[#18181B] bg-white backdrop-blur-lg rounded-box w-52 shadow "
                             >
                                 <motion.li
                                     variants={eachFadeInAnimation}

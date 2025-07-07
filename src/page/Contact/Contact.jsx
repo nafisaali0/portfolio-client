@@ -41,13 +41,13 @@ const Contact = () => {
 
     return (
         <>
-            <div className="max-w-4xl p-5 mx-auto mt-52 mb-10 overflow-hidden">
+            <div className="max-w-4xl lg:p-5 p-1 mx-auto mt-52 mb-10 overflow-hidden">
                 <div className="flex flex-col items-start justify-center">
                     <div className="flex items-center justify-center gap-5 my-3 text-left">
                         {/* <div className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]">Let's</div> */}
                         <RollingText
                             text="Let's"
-                            className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]"
+                            className="lg:text-[135px] md:text-[118px] text-[55px] font-extrabold uppercase leading-[0.9em]"
                             direction="down"
                         />
                         <div className="w-10 h-10 lg:w-20 lg:h-20 flex items-center justify-center flex-row">
@@ -62,7 +62,7 @@ const Contact = () => {
                         </div>
                         <RollingText
                             text="Talk"
-                            className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]"
+                            className="lg:text-[135px] md:text-[118px] text-[55px] font-extrabold uppercase leading-[0.9em]"
                             direction="down"
                         />
                     </div>
