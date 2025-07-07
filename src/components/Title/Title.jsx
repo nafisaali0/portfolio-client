@@ -27,7 +27,7 @@ const Title = ({ title }) => {
             {/* <h2 className="text-2xl font-semibold uppercase mb-6 text-black dark:text-grayDarkAlltext">{title}</h2> */}
 
             <motion.h2
-                className="text-2xl font-semibold uppercase mb-6 text-black dark:text-grayDarkAlltext flex gap-1 flex-wrap"
+                className="text-xl font-semibold uppercase mb-6 text-black dark:text-grayDarkAlltext flex gap-1 flex-wrap"
                 variants={container}
                 initial="hidden"
                 animate="visible"
