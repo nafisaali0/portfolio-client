@@ -44,7 +44,6 @@ const Navbar = () => {
                                     Education
                                 </NavLink>
                             </motion.li>
-
                             <motion.li
                                 variants={eachFadeInAnimation}
                                 initial="initial"

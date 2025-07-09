@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
                 element: <Projects />
             },
             {
-                path: "/create-procjects",
+                path: "/createProcject",
                 element: <CreateProjects />
             },
             {

@@ -12,6 +12,7 @@ import { LuSquareArrowOutUpRight } from "react-icons/lu";
 const LargeIcons = ({ index, id, github_link, live_link }) => {
 
     const isAdmin = useAdminLocalStorage();
+    console.log(isAdmin)
 
     return (
         <>
