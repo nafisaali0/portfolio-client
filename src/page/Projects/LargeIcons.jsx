@@ -18,14 +18,14 @@ const LargeIcons = ({ index, id, github_link, live_link }) => {
         <>
             {/*icons-large*/}
             <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
-                <Link
+                {/* <Link
                     to={github_link}
                     target="_blank"
                     title="Feature"
                     className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <LuSquareArrowOutUpRight />
-                </Link>
+                </Link> */}
                 <Link
                     to={github_link}
                     target="_blank"
@@ -40,13 +40,13 @@ const LargeIcons = ({ index, id, github_link, live_link }) => {
                 >
                     <RiGlobalLine />
                 </Link>
-                <Link
+                {/* <Link
                     to={live_link}
                     target="_blank"
                     className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
                 >
                     <RxVideo />
-                </Link>
+                </Link> */}
                 {
                     isAdmin ?
 
