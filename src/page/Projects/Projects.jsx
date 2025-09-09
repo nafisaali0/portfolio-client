@@ -6,7 +6,7 @@ import Title from "../../components/Title/Title";
 import useAOS from "../../hooks/useAOS";
 import LargeIcons from './LargeIcons';
 import Small_Icons from "./Small_Icons";
-import { LuSquareArrowOutUpRight } from "react-icons/lu";
+// import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
 const Projects = () => {
 
@@ -32,8 +32,9 @@ const Projects = () => {
                                         <Tab
                                             key={index}
                                             data-aos="fade-right"
-                                            data-aos-offset="300"
-                                            data-aos-delay="600"
+                                            data-aos-offset="200"
+                                            data-aos-duration="2000"
+                                            data-aos-easing="ease-in-out"
                                             className={`${selectedTab === index ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>{eachCategory}</Tab>
                                     ))
                                 }
@@ -47,7 +48,9 @@ const Projects = () => {
                                     <>
                                         <div
                                             data-aos={index % 2 !== 0 ? 'fade-right' : 'fade-left'}
-                                            data-aos-offset="300"
+                                            data-aos-offset="200"
+                                            data-aos-duration="2000"
+                                            data-aos-easing="ease-in-out"
                                             className={`w-full min-h-[500px] flex flex-col md:flex-row justify-center items-center gap-5 p-6 dark:bg-white/10 rounded-3xl md:border md:border-grayDarkAlltext ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
                                             style={{
                                                 backgroundImage:

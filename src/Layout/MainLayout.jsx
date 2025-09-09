@@ -10,8 +10,7 @@ const MainLayout = () => {
     if (loading) return <PreLoader />;
 
     return (
-        <>        
-            {/* <HomePageTransition /> */}
+        <>
             <div className="mb-14">
                 <Navbar></Navbar>
             </div>

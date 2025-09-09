@@ -11,7 +11,9 @@ const About = () => {
         <div className="flex items-center gap-3 flex-col md:flex-row">
           <div
             data-aos="fade-right"
-            data-aos-offset="300"
+            data-aos-offset="200"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-out"
             className="flex-1">
             <p
               className="text-justify leading-relaxed dark:text-white">
@@ -27,7 +29,9 @@ const About = () => {
           </div>
           <div
             data-aos="fade-left"
-            data-aos-offset="300"
+            data-aos-offset="200"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-out"
             className="w-full md:w-1/3">
             <DotLottieReact
               src="https://lottie.host/126ec5b3-1a92-4c89-9e64-e37dbf02c5ba/nY7IUYiGOk.lottie"

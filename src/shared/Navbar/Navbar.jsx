@@ -2,14 +2,19 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo/logo_red_black-removebg.png"
 import Toggle from "../../components/Toggle/Toggle";
 import './navStyle.css'
-import eachFadeInAnimation from './../../Utility/eachFadeInAnimation';
 import { motion } from 'framer-motion';
+import eachFadedownAnimation from "../../Utility/eachFadedownAnimation";
 
 const Navbar = () => {
 
     return (
         <>
-            <div className="fixed top-0 z-50 w-full bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
+            <div
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-duration="2000"
+                data-aos-easing="ease-in-out"
+                className="fixed top-0 z-50 w-full bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
                 <nav className="navbar px-4 md:px-12 flex items-center justify-between">
                     {/* small screen logo */}
                     <div className="flex items-center md:hidden">
@@ -28,10 +33,11 @@ const Navbar = () => {
                         className="hidden md:flex flex-1 justify-center items-center">
                         <ul className="flex items-center justify-center space-x-24 group font-medium text-black dark:text-grayDarkAlltext">
                             <motion.li
-                                variants={eachFadeInAnimation}
+                                variants={eachFadedownAnimation}
                                 initial="initial"
                                 animate="animate"
-                                custom={0}>
+                                custom={0}
+                            >
                                 <NavLink
                                     to="/education-background"
                                     className={({ isActive }) =>
@@ -45,7 +51,7 @@ const Navbar = () => {
                                 </NavLink>
                             </motion.li>
                             <motion.li
-                                variants={eachFadeInAnimation}
+                                variants={eachFadedownAnimation}
                                 initial="initial"
                                 animate="animate"
                                 custom={1}>
@@ -75,7 +81,7 @@ const Navbar = () => {
                             </li>
 
                             <motion.li
-                                variants={eachFadeInAnimation}
+                                variants={eachFadedownAnimation}
                                 initial="initial"
                                 animate="animate"
                                 custom={3} >
@@ -93,7 +99,7 @@ const Navbar = () => {
                             </motion.li>
 
                             <motion.li
-                                variants={eachFadeInAnimation}
+                                variants={eachFadedownAnimation}
                                 initial="initial"
                                 animate="animate"
                                 custom={4} >
@@ -111,7 +117,7 @@ const Navbar = () => {
                             </motion.li>
 
                             <motion.li
-                                variants={eachFadeInAnimation}
+                                variants={eachFadedownAnimation}
                                 initial="initial"
                                 animate="animate"
                                 custom={5} >
@@ -144,7 +150,7 @@ const Navbar = () => {
                                 className="dropdown-content mt-3 p-4 py-6 text-center space-y-5 font-medium text-grayLightProfileText dark:text-grayDarkAlltext dark:bg-[#18181B] bg-white backdrop-blur-lg rounded-box w-52 shadow "
                             >
                                 <motion.li
-                                    variants={eachFadeInAnimation}
+                                    variants={eachFadedownAnimation}
                                     initial="initial"
                                     animate="animate"
                                     custom={0}
@@ -163,7 +169,7 @@ const Navbar = () => {
                                 </motion.li>
 
                                 <motion.li
-                                    variants={eachFadeInAnimation}
+                                    variants={eachFadedownAnimation}
                                     initial="initial"
                                     animate="animate"
                                     custom={1}>
@@ -181,7 +187,7 @@ const Navbar = () => {
                                 </motion.li>
 
                                 <motion.li
-                                    variants={eachFadeInAnimation}
+                                    variants={eachFadedownAnimation}
                                     initial="initial"
                                     animate="animate"
                                     custom={2}>
@@ -199,7 +205,7 @@ const Navbar = () => {
                                 </motion.li>
 
                                 <motion.li
-                                    variants={eachFadeInAnimation}
+                                    variants={eachFadedownAnimation}
                                     initial="initial"
                                     animate="animate"
                                     custom={3}>

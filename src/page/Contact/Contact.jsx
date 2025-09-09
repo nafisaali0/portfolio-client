@@ -44,7 +44,6 @@ const Contact = () => {
             <div className="max-w-4xl p-5 mx-auto mt-52 mb-10 overflow-hidden">
                 <div className="flex flex-col items-start justify-center">
                     <div className="flex items-center justify-center gap-5 my-3 text-left">
-                        {/* <div className="lg:text-[135px] md:text-[120px] text-[55px] font-extrabold uppercase leading-[0.9em]">Let's</div> */}
                         <RollingText
                             text="Let's"
                             className="lg:text-[135px] md:text-[118px] text-[50px] font-extrabold uppercase leading-[0.9em]"
@@ -69,7 +68,9 @@ const Contact = () => {
                     <div className="flex justify-between items-center flex-col lg:flex-row w-full mt-6">
                         <div
                             data-aos="fade-right"
-                            data-aos-offset="300"
+                            data-aos-offset="200"
+                            data-aos-duration="2000"
+                            data-aos-easing="ease-in-out"
                             className="flex-1 p-2 text-center lg:text-start text-sm lg:text-lg  font-semibold">
                             <motion.p
                                 variants={textReveal}
@@ -80,7 +81,9 @@ const Contact = () => {
                         </div>
                         <div
                             data-aos="fade-left"
-                            data-aos-offset="300"
+                            data-aos-offset="200"
+                            data-aos-duration="2000"
+                            data-aos-easing="ease-in-out"
                             className="flex justify-end items-center flex-1 flex-wrap gap-2 p-2">
                             <a
                                 href={LINKS.resume}
@@ -92,18 +95,12 @@ const Contact = () => {
                             <Link
                                 to={LINKS.github}
                                 target="_blank"
-                                variants={eachFadeInAnimation}
                                 initial="initial"
                                 animate="animate"
                                 custom={0}
                                 className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/5 dark:bg-white dark:text-black rounded-full flex items-center justify-center text-lg transition-transform duration-300 hover:-translate-y-1"
                             >
-                                <VscGithubInverted
-                                    variants={eachFadeInAnimation}
-                                    initial="initial"
-                                    animate="animate"
-                                    custom={0}
-                                />
+                                <VscGithubInverted/>
                             </Link>
                             <Link
                                 to={LINKS.linkedIn}
@@ -137,13 +134,13 @@ const Contact = () => {
                                                     <label className="block text-grayLightProfileText dark:text-grayDarkAlltext text-sm font-bold mb-2" htmlFor="name">
                                                         Name
                                                     </label>
-                                                    <input type="text" name="user_name" className=" dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-grayLightProfileText dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="name" />
+                                                    <input type="text" name="user_name" className=" dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-grayLightProfileText dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="name" placeholder="name" />
                                                 </div>
                                                 <div className="mb-4">
                                                     <label className="block text-grayLightProfileText dark:text-grayDarkAlltext text-sm font-bold mb-2" htmlFor="email">
                                                         Email
                                                     </label>
-                                                    <input type="text" name="user_email" className="dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-gray-700 dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Username" />
+                                                    <input type="text" name="user_email" className="dark:bg-black shadow appearance-none border border-grayDarkAlltext rounded w-full py-2 px-3 text-gray-700 dark:text-grayDarkAlltext leading-tight focus:outline-none focus:shadow-outline" id="email"  placeholder="Username" />
                                                 </div>
                                                 <div className="mb-4">
                                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-grayLightProfileText dark:text-grayDarkAlltext">Your message</label>

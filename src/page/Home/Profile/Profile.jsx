@@ -1,8 +1,5 @@
 import profile from "../../../../public/logo/myAvater.png"
 import { MdLocationCity } from "react-icons/md";
-// import { HiLocationMarker } from "react-icons/hi";
-// import { ImLocation2 } from "react-icons/im";
-// for home
 import { VscGithubInverted } from "react-icons/vsc";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { PiFileArrowDownFill } from "react-icons/pi";
@@ -19,8 +16,10 @@ const Profile = () => {
             <div className="max-w-4xl p-5 mt-32 mb-16 mx-auto overflow-hidden">
                 <div className="flex items-center flex-col md:flex-row justify-center lg:space-x-10 md:gap-10">
                     <div
-                        // data-aos-delay="500"
-                        data-aos="fade-up"
+                        data-aos="fade-right"
+                        data-aos-offset="500"
+                        data-aos-duration="3000"
+                        data-aos-easing="ease-in-out"
                         className="inset-0 bg-gradient-to-r from-[#f43f5e] via-[#64748B] to-[#FB923C] rounded-full p-1"
                     >
                         <div className="w-full h-full rounded-full">
@@ -28,8 +27,10 @@ const Profile = () => {
                         </div>
                     </div>
                     <div
-                        // data-aos-delay="500"
-                        data-aos="fade-up"
+                        data-aos="fade-left"
+                        data-aos-offset="500"
+                        data-aos-duration="3000"
+                        data-aos-easing="ease-in-out"
                     >
                         <div
                             className="text-4xl md:text-left text-center font-semibold dark:text-white">

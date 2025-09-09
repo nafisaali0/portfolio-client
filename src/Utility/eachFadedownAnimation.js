@@ -1,5 +1,5 @@
-const eachFadeInAnimation = {
-  initial: { opacity: 0, y: 40 },
+const eachFadedownAnimation = {
+  initial: { opacity: 0, y: -40 },
   animate: (index) => ({
     opacity: 1,
     y: 0,
@@ -11,4 +11,4 @@ const eachFadeInAnimation = {
   }),
 };
 
-export default eachFadeInAnimation;
+export default eachFadedownAnimation;
