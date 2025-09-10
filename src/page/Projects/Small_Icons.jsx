@@ -6,26 +6,19 @@ import { Link } from "react-router-dom";
 import { RxVideo } from "react-icons/rx";
 import { GrUpdate } from "react-icons/gr";
 import DeleteProject from "../DeleteProject/DeleteProject";
-import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import Feature from "./Feature";
 
 
 const Small_Icons = ({ index, id, github_link, live_link, features, video_link }) => {
+
     const isAdmin = useAdminLocalStorage();
+
     return (
         <>
             <div className="md:hidden flex items-center justify-end gap-3 w-full mt-3 max-md:flex-wrap">
                 {features && features?.length > 0 && (
                     <Feature features={features} index={index} id={id} />
                 )}
-                <Link
-                    to={github_link}
-                    target="_blank"
-                    title="Feature"
-                    className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                >
-                    <LuSquareArrowOutUpRight />
-                </Link>
                 <Link
                     to={github_link}
                     target="_blank"

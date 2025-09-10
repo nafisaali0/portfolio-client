@@ -24,7 +24,7 @@ const Projects = () => {
                 <Title title="Projects" />
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <div className="flex justify-center items-center mb-10">
-                        <TabList className="cursor-pointer flex gap-8 md:gap-9 items-center capitalize md:text-lg text-sm font-semibold my-5 text-black dark:text-grayDarkAlltext">
+                        <TabList className="cursor-pointer flex space-x-2 md:gap-9 items-center capitalize md:text-lg text-sm font-semibold my-5 text-black dark:text-grayDarkAlltext">
                             <>
                                 {
                                     uniqueCategory?.map((eachCategory, index) => (
