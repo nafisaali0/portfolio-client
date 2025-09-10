@@ -10,7 +10,7 @@ const image_hostion_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const UpdateProject = () => {
 
   const selectProject = useLoaderData()
-  const { _id, title, description, category, language, live_link, github_link, details_image } = selectProject
+  const { _id, title, description, features, category, language, live_link, github_link, details_image } = selectProject
   // modify need:
 
   // const blogs = useLoaderData()//load all blogs info
@@ -43,6 +43,7 @@ const UpdateProject = () => {
 
     const title = e.target.title.value;
     const description = e.target.description.value;
+    const features = e.target.features.value;
     const categoryInput = e.target.category.value;
     const category = categoryInput
       .split(',')
@@ -53,8 +54,8 @@ const UpdateProject = () => {
     const date = moment().format("MMM Do YY");
     const adminEmail = localStorage.getItem('userEmail');
 
-    const updateProject = { title, description, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
-    console.log(updateProject)
+    const updateProject = { title, description, features, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
+    // console.log(updateProject)
 
 
     // sent update projects into to server
@@ -106,6 +107,10 @@ const UpdateProject = () => {
           <div className="my-3">
             <label htmlFor="Title" className="text-2xl font-bold">Description</label>
             <textarea type="text" name="description" defaultValue={description} placeholder="Project's Description.." className="resize-none bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
+          </div>
+          <div className="my-3">
+            <label htmlFor="Title" className="text-2xl font-bold">Features</label>
+            <textarea type="text" name="features" defaultValue={features} placeholder="Features" className="resize-none bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
           </div>
           <div>
             <label htmlFor="Title" className="text-2xl font-bold">Tech Language</label>

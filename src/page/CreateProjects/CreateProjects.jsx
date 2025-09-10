@@ -48,6 +48,7 @@ const CreateProjects = () => {
 
         const title = e.target.title.value;
         const description = e.target.description.value;
+        const features = e.target.features.value;
         const categoryInput = e.target.category.value;
         const category = categoryInput
             .split(',')
@@ -58,7 +59,7 @@ const CreateProjects = () => {
         const date = moment().format("MMM Do YY");
         const adminEmail = localStorage.getItem('userEmail');
 
-        const newProject = { title, description, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
+        const newProject = { title, description, features, date, category, language, live_link, github_link, details_image: imagePreview, adminEmail }
         // console.log(newProject)
         fetch('https://portfolio-server-theta-five.vercel.app/projects', {
             method: 'POST',
@@ -99,6 +100,9 @@ const CreateProjects = () => {
                                 </div>
                                 <div className="my-3">
                                     <textarea type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Write Your Description here.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
+                                </div>
+                                <div className="my-3">
+                                    <textarea type="text" name="features" value={formData.features} onChange={handleChange} placeholder="Features" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
                                 </div>
                                 <div className="my-3">
                                     <textarea type="text" name="language" value={formData.language} onChange={handleChange} placeholder="Tech Language" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />

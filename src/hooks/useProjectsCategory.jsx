@@ -7,7 +7,7 @@ const useProjectsCategory = () => {
     const uniqueCategory = useMemo(() => {
         if (!fetchProjects) return [];
 
-        const allCategories = fetchProjects.flatMap(project => project.category);
+        const allCategories = fetchProjects.flatMap(project => project?.category);
 
         return [...new Set(allCategories)];
     }, [fetchProjects]);

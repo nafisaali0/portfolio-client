@@ -9,7 +9,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import CustomCursor from './components/CustomCursor/CustomCursor'
 
 const queryClient = new QueryClient()
 
@@ -18,7 +17,6 @@ createRoot(document.getElementById('root')).render(
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        <CustomCursor></CustomCursor>
       </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode >,

@@ -6,26 +6,19 @@ import { RxVideo } from "react-icons/rx";
 import { GrUpdate } from "react-icons/gr";
 import DeleteProject from './../DeleteProject/DeleteProject';
 import PropTypes from "prop-types";
-import { LuSquareArrowOutUpRight } from "react-icons/lu";
+import Feature from './Feature';
 
 
-const LargeIcons = ({ index, id, github_link, live_link }) => {
+const LargeIcons = ({ index, id, github_link, live_link, features, video_link }) => {
 
     const isAdmin = useAdminLocalStorage();
-    console.log(isAdmin)
 
     return (
         <>
-            {/*icons-large*/}
             <div className={`hidden md:flex items-center ${index % 2 !== 0 ? 'justify-start' : 'justify-end'} flex-wrap gap-3 w-full mt-3`}>
-                {/* <Link
-                    to={github_link}
-                    target="_blank"
-                    title="Feature"
-                    className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                >
-                    <LuSquareArrowOutUpRight />
-                </Link> */}
+                {features && features?.length > 0 && (
+                    <Feature features={features} index={index} id={id} />
+                )}
                 <Link
                     to={github_link}
                     target="_blank"
@@ -40,13 +33,16 @@ const LargeIcons = ({ index, id, github_link, live_link }) => {
                 >
                     <RiGlobalLine />
                 </Link>
-                {/* <Link
-                    to={live_link}
-                    target="_blank"
-                    className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
-                >
-                    <RxVideo />
-                </Link> */}
+                {video_link?.length > 0 && (
+
+                    <Link
+                        to={video_link}
+                        target="_blank"
+                        className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                    >
+                        <RxVideo />
+                    </Link>
+                )}
                 {
                     isAdmin ?
 
@@ -72,6 +68,8 @@ export default LargeIcons
 LargeIcons.propTypes = {
     id: PropTypes.number,
     index: PropTypes.number,
+    features: PropTypes.string,
     github_link: PropTypes.link,
-    live_link: PropTypes.link
+    live_link: PropTypes.link,
+    video_link: PropTypes.link,
 };
