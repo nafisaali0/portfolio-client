@@ -2,7 +2,8 @@ import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import { PropTypes } from 'prop-types';
 
 const Feature = ({ features, index }) => {
-    const modalId = `modal_${index}`; // unique modal id
+    
+    const modalId = `modal_${index}`;
 
     return (
         <div
@@ -13,18 +14,18 @@ const Feature = ({ features, index }) => {
             </button>
 
             <dialog id={modalId} className="modal">
-                <div className="modal-box w-11/12 max-w-5xl bg-black/10 dark:bg-white">
-                    <h3 className="font-bold text-lg mb-3">Features</h3>
+                <div className="modal-box w-11/12 max-w-5xl text-black dark:text-grayDarkAlltext bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
+                    <h3 className="text-xl font-semibold uppercase mb-3">Features</h3>
                     <div className="text-lg ml-6 font-normal">
                         <ul>
                             {features?.split(";")?.map((item, idx) => (
-                                <li key={idx}>{item.trim()}</li>
+                                <li key={idx}>{item?.trim()}</li>
                             ))}
                         </ul>
                     </div>
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn bg-black/10 dark:bg-white text-black">Close</button>
+                            <button className="btn bg-black/10 text-white dark:bg-grayDarkAlltext dark:text-black">Close</button>
                         </form>
                     </div>
                 </div>

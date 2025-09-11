@@ -21,7 +21,7 @@ const Projects = () => {
 
         <>
             <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
-                <Title title="Projects" />
+                <Title title="Projects"/>
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <div className="flex justify-center items-center mb-10">
                         <TabList className="cursor-pointer flex space-x-2 md:gap-9 items-center capitalize md:text-lg text-sm font-semibold my-5 text-black dark:text-grayDarkAlltext">
@@ -46,11 +46,11 @@ const Projects = () => {
                                 <div className="grid grid-cols-1 gap-5 overflow-hidden">
                                     {filteredProjects
                                         ?.filter((project) =>
-                                            project.category?.includes(uniqueCategory[selectedTab])
+                                            project?.category?.includes(uniqueCategory[selectedTab])
                                         )
                                         .map((sortProjects, i) => (
                                             <div
-                                                key={sortProjects._id}
+                                                key={sortProjects?._id}
                                                 data-aos={i % 2 !== 0 ? "fade-right" : "fade-left"}
                                                 data-aos-offset="200"
                                                 data-aos-duration="2000"
@@ -64,22 +64,21 @@ const Projects = () => {
                                             >
                                                 {/* icons - small */}
                                                 <Small_Icons
-                                                    id={sortProjects._id}
-                                                    features={sortProjects.features}
-                                                    github_link={sortProjects.github_link}
-                                                    live_link={sortProjects.live_link}
+                                                    id={sortProjects?._id}
+                                                    features={sortProjects?.features}
+                                                    github_link={sortProjects?.github_link}
+                                                    live_link={sortProjects?.live_link}
                                                     video_link={sortProjects?.video_link}
                                                 />
 
                                                 <div className="flex-1 max-h-[400px] rounded-2xl overflow-hidden group relative">
                                                     <img
-                                                        src={sortProjects.details_image}
+                                                        src={sortProjects?.details_image}
                                                         alt="eachProject"
                                                         className="w-full h-auto min-h-full object-cover object-top transition-transform duration-[8500ms] ease-in-out group-hover:translate-y-[-85%]"
                                                     />
                                                 </div>
-
-                                                <div className="flex-1 flex flex-col gap-5">
+                                                <div className="flex-1 flex flex-col gap-3">
                                                     {/* icon-large */}
                                                     <LargeIcons
                                                         index={i}
@@ -90,13 +89,17 @@ const Projects = () => {
                                                         video_link={sortProjects?.video_link}
                                                     />
                                                     <p className="text-4xl font-semibold text-black dark:text-white mt-4 md:mt-6">
-                                                        {sortProjects.title}
+                                                        {sortProjects?.title}
                                                     </p>
-                                                    <p className="text-xs text-textSmalllight dark:text-slate-100 my-2">
-                                                        {sortProjects.description}
+                                                    <p className="text-xs text-textSmalllight dark:text-white">
+                                                        {sortProjects?.description?.split(";")?.map((item, idx) => (
+                                                            <h1 key={idx}>
+                                                                {item?.trim()}
+                                                            </h1>
+                                                        ))}
                                                     </p>
                                                     <ul className="flex flex-wrap gap-2 my-3 w-full">
-                                                        {sortProjects.language
+                                                        {sortProjects?.language
                                                             ?.split(",")
                                                             ?.map((lang, langIndex) => (
                                                                 <li

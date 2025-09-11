@@ -93,25 +93,25 @@ const CreateProjects = () => {
                                     </label>
                                 </div>
                                 <div className="mt-10">
-                                    <textarea type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg outline-none font-bold placeholder:text-4xl" />
+                                    <textarea type="text" name="title" value={formData?.title} onChange={handleChange} placeholder="Title.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg outline-none font-bold placeholder:text-4xl" />
                                 </div>
                                 <div className="my-3">
-                                    <textarea type="category" name="category" value={formData.category} onChange={handleChange} placeholder="Category" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg outline-none font-semibold placeholder:text-xl" />
+                                    <textarea type="category" name="category" value={formData?.category} onChange={handleChange} placeholder="Category" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg outline-none font-semibold placeholder:text-xl" />
                                 </div>
                                 <div className="my-3">
-                                    <textarea type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Write Your Description here.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
+                                    <textarea type="text" name="description" value={formData?.description} onChange={handleChange} placeholder="Write Your Description here.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
                                 </div>
                                 <div className="my-3">
-                                    <textarea type="text" name="features" value={formData.features} onChange={handleChange} placeholder="Features" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
+                                    <textarea type="text" name="features" value={formData?.features} onChange={handleChange} placeholder="Features" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
                                 </div>
                                 <div className="my-3">
-                                    <textarea type="text" name="language" value={formData.language} onChange={handleChange} placeholder="Tech Language" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
+                                    <textarea type="text" name="language" value={formData?.language} onChange={handleChange} placeholder="Tech Language" className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
                                 </div>
                                 <div className="my-3">
-                                    <textarea type="text" name="live_link" value={formData.live_link} onChange={handleChange} placeholder="Live Link.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg outline-none font-semibold placeholder:text-xl" />
+                                    <textarea type="text" name="live_link" value={formData?.live_link} onChange={handleChange} placeholder="Live Link.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg outline-none font-semibold placeholder:text-xl" />
                                 </div>
                                 <div className="my-3">
-                                    <textarea type="text" name="github_link" value={formData.github_link} onChange={handleChange} placeholder="Github Link.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
+                                    <textarea type="text" name="github_link" value={formData?.github_link} onChange={handleChange} placeholder="Github Link.." className="resize-none overflow-y-hidden bg-transparent my-5 py-5 w-full text-lg  outline-none font-semibold placeholder:text-xl" />
                                 </div>
                             </div>
                         </div>
@@ -124,22 +124,22 @@ const CreateProjects = () => {
                                     <h1 className=" "><img className="w-full h-full object-cover" src={imagePreview} alt="" /></h1>
                                 </div>
                                 <div className="my-10">
-                                    <h1 type="text" name="title" placeholder="Title.." className="text-4xl font-bold placeholder:text-4xl">{formData.title}</h1>
+                                    <h1 type="text" name="title" placeholder="Title.." className="text-4xl font-bold placeholder:text-4xl">{formData?.title}</h1>
                                 </div>
                                 <div className="my-3">
-                                    <p className="text-xl font-semibold placeholder:text-xl">{formData.category}</p>
+                                    <p className="text-xl font-semibold placeholder:text-xl">{formData?.category}</p>
                                 </div>
                                 <div className="my-3">
-                                    <p className="text-xl font-semibold placeholder:text-xl">{formData.description}</p>
+                                    <p className="text-xl font-semibold placeholder:text-xl">{formData?.description}</p>
                                 </div>
                                 <div className="my-3">
-                                    <p className="text-xl font-semibold placeholder:text-xl">{formData.language}</p>
+                                    <p className="text-xl font-semibold placeholder:text-xl">{formData?.language}</p>
                                 </div>
                                 <div className="my-3">
-                                    <p className="text-xl font-semibold placeholder:text-xl">{formData.live_link}</p>
+                                    <p className="text-xl font-semibold placeholder:text-xl">{formData?.live_link}</p>
                                 </div>
                                 <div className="my-3">
-                                    <p className="text-xl font-semibold placeholder:text-xl">{formData.github_link}</p>
+                                    <p className="text-xl font-semibold placeholder:text-xl">{formData?.github_link}</p>
                                 </div>
                             </div>
                         </div>
