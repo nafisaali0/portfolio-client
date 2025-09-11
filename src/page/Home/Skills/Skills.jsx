@@ -62,13 +62,13 @@ const Skills = () => {
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <TabList className={" flex gap-5 items-center text-lg font-semibold my-5 text-black dark:text-grayDarkAlltext"}>
                         <Tab
-                            className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Front End</Tab>
+                            className={`${selectedTab === 0 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext cursor-pointer' : ''}`}>Front End</Tab>
                         <Tab
-                            className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Back End</Tab>
+                            className={`${selectedTab === 1 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext cursor-pointer' : ''}`}>Back End</Tab>
                         <Tab
-                            className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Database</Tab>
+                            className={`${selectedTab === 2 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext cursor-pointer' : ''}`}>Database</Tab>
                         <Tab
-                            className={`${selectedTab === 3 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>Tools</Tab>
+                            className={`${selectedTab === 3 ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext cursor-pointer' : ''}`}>Tools</Tab>
                     </TabList>
                     <div className="my-5 font-medium text-sm text-black dark:text-grayDarkAlltext">
                         <TabPanel>
