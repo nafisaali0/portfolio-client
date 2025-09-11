@@ -12,7 +12,6 @@ import emailjs from '@emailjs/browser';
 import useAOS from './../../hooks/useAOS';
 import { motion } from 'framer-motion';
 import textReveal from "../../Utility/textReveal";
-import eachFadeInAnimation from "../../Utility/eachFadeInAnimation";
 import RollingText from "../../components/Animation/RollingText/RollingText";
 
 const Contact = () => {
@@ -56,7 +55,7 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 aria-label="WhatsApp"
                             >
-                                <FaWhatsapp className="text-[40px] hover:animate-spin hover:transition hover:duration-[400ms] hover:ease-in-out" title="whatsapp" />
+                                <FaWhatsapp className="text-[50px] hover:animate-spin hover:transition hover:duration-[400ms] hover:ease-in-out" title="whatsapp" />
                             </a>
                         </div>
                         <RollingText

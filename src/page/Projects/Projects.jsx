@@ -20,11 +20,11 @@ const Projects = () => {
     return (
 
         <>
-            <div className="max-w-4xl p-5 mx-auto mt-36 overflow-hidden">
+            <div className="max-w-4xl p-3 mx-auto mt-36">
                 <Title title="Projects"/>
                 <Tabs onSelect={(index) => handleTabSelect(index)}>
                     <div className="flex justify-center items-center mb-10">
-                        <TabList className="cursor-pointer flex space-x-2 md:gap-9 items-center capitalize md:text-lg text-sm font-semibold my-5 text-black dark:text-grayDarkAlltext">
+                        <TabList className="cursor-pointer flex md:gap-9 gap-2 items-center capitalize md:text-lg text-sm md:font-semibold font-normal my-5 text-black dark:text-grayDarkAlltext">
                             <>
                                 {
                                     uniqueCategory?.map((eachCategory, index) => (
@@ -34,7 +34,7 @@ const Projects = () => {
                                             data-aos-offset="200"
                                             data-aos-duration="2000"
                                             data-aos-easing="ease-in-out"
-                                            className={`${selectedTab === index ? 'p-2 border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>{eachCategory}</Tab>
+                                            className={`${selectedTab === index ? 'border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>{eachCategory}</Tab>
                                     ))
                                 }
                             </>

@@ -12,6 +12,7 @@ import Feature from './Feature';
 const LargeIcons = ({ index, id, github_link, live_link, features, video_link }) => {
 
     const isAdmin = useAdminLocalStorage();
+    console.log(isAdmin)
 
     return (
         <>
@@ -43,7 +44,16 @@ const LargeIcons = ({ index, id, github_link, live_link, features, video_link })
                         <RxVideo />
                     </Link>
                 )}
-                {
+
+                <Link
+                    to={`/update-project/${id}`}
+                    target="_blank"
+                    className="w-10 h-10 border border-grayDarkProfileText dark:border-none bg-black/10 dark:bg-white dark:text-black rounded-full flex items-center justify-center hover:scale-110 transition text-2xl"
+                >
+                    <GrUpdate />
+                </Link>
+                <DeleteProject key={id} id={id} />
+                {/* {
                     isAdmin ?
 
                         <>
@@ -57,7 +67,7 @@ const LargeIcons = ({ index, id, github_link, live_link, features, video_link })
                             <DeleteProject key={id} id={id} />
                         </>
                         : ""
-                }
+                } */}
             </div>
         </>
     )
