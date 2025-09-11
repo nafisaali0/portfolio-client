@@ -13,7 +13,7 @@ const Feature = ({ features, index }) => {
                 <LuSquareArrowOutUpRight />
             </button>
 
-            <dialog id={modalId} className="modal">
+            <dialog id={modalId} className="modal bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
                 <div className="modal-box w-11/12 max-w-5xl text-black dark:text-grayDarkAlltext bg-white/50 dark:bg-bodyBG/50 backdrop-blur-xl dark:backdrop-blur-sm">
                     <h3 className="text-xl font-semibold uppercase mb-3">Features</h3>
                     <div className="text-lg ml-6 font-normal">
