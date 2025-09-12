@@ -44,7 +44,7 @@ const LargeIcons = ({ index, id, github_link, live_link, features, video_link })
                         <RxVideo />
                     </Link>
                 )}
-
+{/* 
                 <Link
                     to={`/update-project/${id}`}
                     target="_blank"
@@ -52,8 +52,8 @@ const LargeIcons = ({ index, id, github_link, live_link, features, video_link })
                 >
                     <GrUpdate />
                 </Link>
-                <DeleteProject key={id} id={id} />
-                {/* {
+                <DeleteProject key={id} id={id} /> */}
+                {
                     isAdmin ?
 
                         <>
@@ -67,7 +67,7 @@ const LargeIcons = ({ index, id, github_link, live_link, features, video_link })
                             <DeleteProject key={id} id={id} />
                         </>
                         : ""
-                } */}
+                }
             </div>
         </>
     )

@@ -133,6 +133,9 @@ const CreateProjects = () => {
                                     <p className="text-xl font-semibold placeholder:text-xl">{formData?.description}</p>
                                 </div>
                                 <div className="my-3">
+                                    <p className="text-xl font-semibold placeholder:text-xl">{formData?.features}</p>
+                                </div>
+                                <div className="my-3">
                                     <p className="text-xl font-semibold placeholder:text-xl">{formData?.language}</p>
                                 </div>
                                 <div className="my-3">
