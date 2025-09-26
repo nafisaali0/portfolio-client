@@ -31,9 +31,8 @@ const Projects = () => {
                                         <Tab
                                             key={index}
                                             data-aos="fade-right"
-                                            data-aos-offset="200"
                                             data-aos-duration="2000"
-                                            data-aos-easing="ease-in-out"
+                                            data-aos-easing="ease-in"
                                             className={`${selectedTab === index ? 'border-b-2 outline-none bg-white dark:bg-transparent dark:text-grayDarkAlltext' : ''}`}>{eachCategory}</Tab>
                                     ))
                                 }
@@ -52,9 +51,8 @@ const Projects = () => {
                                             <div
                                                 key={sortProjects?._id}
                                                 data-aos={i % 2 !== 0 ? "fade-right" : "fade-left"}
-                                                data-aos-offset="200"
                                                 data-aos-duration="2000"
-                                                data-aos-easing="ease-in-out"
+                                                data-aos-easing="ease-in"
                                                 className={`w-full min-h-[500px] flex flex-col md:flex-row justify-center items-center gap-5 p-6 dark:bg-white/10 rounded-3xl md:border md:border-grayDarkAlltext ${i % 2 !== 0 ? "md:flex-row-reverse" : ""
                                                     }`}
                                                 style={{
